@@ -1,0 +1,58 @@
+body {
+  background-color: #242326;
+}
+
+.main {
+  font-family: "Roboto Mono", monospace;
+  color: #9d5dea;
+  text-align: center;
+  font-size: 70%;
+  top: 50%;
+  left: 50%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 30em;
+  height: 18em;
+  transform: translate(-50%, -50%);
+}
+
+.sub {
+  font-family: "Roboto Mono", monospace;
+  color: #9d5dea;
+  text-align: center;
+  font-size: 70%;
+  position: fixed;
+  top: 60%;
+  left: 50%;
+  width: 30em;
+  height: 18em;
+  transform: translate(-50%, -50%);
+}
+
+.sub-sub {
+  font-family: "Roboto Mono", monospace;
+  color: #9d5dea;
+  text-align: center;
+  font-size: 70%;
+  position: fixed;
+  top: 70%;
+  left: 50%;
+  width: 30em;
+  height: 18em;
+  transform: translate(-50%, -50%);
+}
+
+a {
+  font-family: "Roboto Mono", monospace;
+  font-size: 10px;
+  color: #9d5dea;
+  display: flex;
+  justify-content: flex-end;
+}
+a:hover {
+  color: #b691e3;
+}
+a:link {
+  text-decoration: none;
+}

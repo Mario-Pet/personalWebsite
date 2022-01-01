@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap");
+
+body {
+  background-color: #242326;
+}
+#container {
+  height: 450px;
+  flex-direction: column;
+  margin-top: 260px;
+}
+
+#newyearsheader {
+  color: #9d5dea;
+  display: flex;
+  font-family: "Roboto Mono", monospace;
+  justify-content: center;
+}
+
+#newyearsheader > h1 {
+  margin-top: 195px;
+}
+
+#section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#section > article {
+  color: #9d5dea;
+  height: 120px;
+  width: 120px;
+  margin: 20px 30px;
+  font-size: 12px;
+  font-family: "Roboto Mono", monospace;
+}
+#daysBox {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#daysBox > p {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  margin-top: 25px;
+}
+#daysBox > div {
+  margin-top: 35px;
+}
+
+#hoursBox {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#hoursBox > p {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  margin-top: 25px;
+}
+#hoursBox > div {
+  margin-top: 35px;
+}
+#minutesBox {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#minutesBox > p {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  margin-top: 25px;
+}
+#minutesBox > div {
+  margin-top: 35px;
+}
+#secondsBox {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#secondsBox > p {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  margin-top: 25px;
+}
+#secondsBox > div {
+  margin-top: 35px;
+}

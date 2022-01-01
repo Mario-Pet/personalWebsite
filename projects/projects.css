@@ -1,0 +1,22 @@
+body {
+  background-color: #242326;
+}
+
+a {
+  font-family: "Roboto Mono", monospace;
+  font-size: 15px;
+  color: #9d5dea;
+  text-decoration: none;
+}
+a:hover {
+  color: #b691e3;
+}
+
+section {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 50vh;
+}
