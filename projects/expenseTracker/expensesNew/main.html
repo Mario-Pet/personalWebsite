@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="main.js"></script>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="container">
+
+        <div class="mainTable">
+
+            <div class="tableHeader">
+                <span id="balance">a</span>
+                <select name="yearpicker" id="yearpicker"></select>
+            </div>
+
+            <table class="table">
+
+                    <thead>
+
+                        <tr class="trHeader">
+                            <th class="thAndRowName">name</th>
+                            <th class="thRest">amount</th>
+                            <th class="thRest">date</th>
+                            <th class="thRest">status</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                    <tr>
+                        <td class="thAndRowName">LMDSMAODAOSDAMOSODMAOSDMAOSMDOASMDOASMDOMASODMOASMDOASMDOAMD</td>
+                        <td class="thRest">445€</td>
+                        <td class="thRest">23.04.2003</td>
+                        <td class="thRest">pending</td>
+                    </tr>
+
+                    </tbody>
+                    
+
+                    
+
+            </table>
+        </div>
+
+        <div class="addTable">
+            <form action="" id="form" onsubmit="retrieveData(event)">
+                <input class="inputName" type="text" name="name" placeholder="name" maxlength="60" id="name">
+                <input class="inputAmount" type="text" name="name" placeholder="€" maxlength="10" id="amount">
+                <label class="datepicker" ><img class="dateImage" src="Image.png"><input type="date" value="" id="date"></label>
+                <input type="submit" value="OK" class="submitButton">
+            </form>
+        </div>
+
+    </div>
+    
+</body>
+</html>
