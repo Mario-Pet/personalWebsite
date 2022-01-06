@@ -14,7 +14,7 @@
         <div class="mainTable">
 
             <div class="tableHeader">
-                <span id="balance">a</span>
+                <p id="balance">0€</p>
                 <select name="yearpicker" id="yearpicker"></select>
             </div>
 
@@ -31,14 +31,9 @@
 
                     </thead>
 
-                    <tbody>
+                    <tbody id="mainTbody">
 
-                    <tr>
-                        <td class="thAndRowName">LMDSMAODAOSDAMOSODMAOSDMAOSMDOASMDOASMDOMASODMOASMDOASMDOAMD</td>
-                        <td class="thRest">445€</td>
-                        <td class="thRest">23.04.2003</td>
-                        <td class="thRest">pending</td>
-                    </tr>
+                    
 
                     </tbody>
                     
@@ -50,9 +45,9 @@
 
         <div class="addTable">
             <form action="" id="form" onsubmit="retrieveData(event)">
-                <input class="inputName" type="text" name="name" placeholder="name" maxlength="60" id="name">
-                <input class="inputAmount" type="text" name="name" placeholder="€" maxlength="10" id="amount">
-                <label class="datepicker" ><img class="dateImage" src="Image.png"><input type="date" value="" id="date"></label>
+                <input class="inputName" type="text" name="name" placeholder="name" maxlength="60" id="name" required>
+                <input class="inputAmount" type="number" name="name" placeholder="€" maxlength="10" id="amount" required>
+                <label class="datepicker"><img class="dateImage" src="Image.png"><input type="date" value="" id="date" required></label>
                 <input type="submit" value="OK" class="submitButton">
             </form>
         </div>
