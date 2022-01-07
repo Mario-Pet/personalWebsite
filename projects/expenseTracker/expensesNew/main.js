@@ -22,9 +22,8 @@ function retrieveData(event) {
     // Retriviing Data 
     event.preventDefault();
     let dataName = document.getElementById("name");
-    let dataAmount = document.getElementById("amount");
+    let dataAmount = document.getElementById("amountInput");
     let dataDate = document.getElementById("date");
-    console.log([dataName.value, dataAmount.value, dataDate.value])
 
     // Adding the Information to the Table
     let tableBody = document.getElementById("mainTbody");
@@ -33,62 +32,112 @@ function retrieveData(event) {
     tableBody.appendChild(trElement);
     trElement.appendChild(tdElement);
 
+    // Adding the Name Cell
     tdElement.innerHTML = dataName.value;
     tdElement.setAttribute("class", "thAndRowName")
 
+    // Adding the Amount Cell
     var tdElement = document.createElement("td");
     trElement.appendChild(tdElement);
     tdElement.innerHTML = `${dataAmount.value}€`;
     tdElement.setAttribute("class", "thRest")
 
+    // Adding the Date Cell
     var tdElement = document.createElement("td");
     trElement.appendChild(tdElement);
     tdElement.innerHTML = dataDate.value;
     tdElement.setAttribute("class", "thRest")
 
+    // Adding the Status Cell
     var tdElementStatus = document.createElement("td");
     trElement.appendChild(tdElementStatus);
-
     tdElementStatus.setAttribute("id", `status`)
+   
+    
+    function statusDecider() {
 
-    function changeStatus() {
-
-        function randomInt(n) {
-            return Math.floor(Math.random() * n)
+        function rndmInt(x) {
+            return Math.floor(Math.random() * x)
         }
+        let storedRandomxValue = rndmInt(3);
+    
+        
 
-        let randmInt = randomInt(3)
-        if (randmInt === 0) {
-            tdElementStatus.innerHTML = "denied";
-            tdElementStatus.setAttribute("class", "thStatusDenied");
-        } else if (randmInt === 1){
-            tdElementStatus.innerHTML = "pending";
-            tdElementStatus.setAttribute("class", "thStatusPending");
-        } else if (randmInt === 2) {
+        if (storedRandomValue === 0) {
+
             tdElementStatus.innerHTML = "active";
             tdElementStatus.setAttribute("class", "thStatusActive");
+            addBalance()
+            clearingFields()
+
+        } else if (storedRandomValue === 1) {
+            console.log("Pending" + storedRandomValue)
+            tdElementStatus.innerHTML = "pending";
+            tdElementStatus.setAttribute("class", "thStatusPending");
+            function decider() {
+                let pendingStoredRandomValue = rndmInt(2);
+                if (pendingStoredRandomValue === 0) {
+                    addBalance()
+                    console.log("AA" + pendingStoredRandomValue)
+                    tdElementStatus.innerHTML = "active";
+                    tdElementStatus.setAttribute("class", "thStatusActive");
+                    clearingFields()
+                    
+                } else if (pendingStoredRandomValue === 1) {
+                    console.log("AA" + pendingStoredRandomValue)
+                    tdElementStatus.innerHTML = "denied";
+                tdElementStatus.setAttribute("class", "thStatusDenied");
+                clearingFields()
+                } 
+            }
+            setTimeout(decider, 5000)
+           
+
+        } else if (storedRandomValue === 2) {
+            console.log("Denied" + storedRandomValue)
+            tdElementStatus.innerHTML = "denied";
+            tdElementStatus.setAttribute("class", "thStatusDenied");
+            clearingFields()
         }
-        console.log(randomInt(3))
 
     }
-    changeStatus()
-    
 
+
+    statusDecider()
+
+
+
+
+
+    
+        
+    function addBalance() {
     // Calculating and converting to readable number
+    
+        
     balance = Number(balance) + Number(dataAmount.value);
     balanceDisplay = calcBalance(balance)
+
    
     // Assigning the calculated balance to the element
     balanceScreen = document.getElementById("balance");
     balanceScreen.innerHTML = `${balanceDisplay}€`;
+    
+    }
+    function clearingFields() {
+        // Clearing the input fields
+        dataAmount.value = "";
+        dataName.value = "";
+        dataDate.value = "";
+    }
+    }
 
-    // Clearing the input fields
-    dataAmount.value = "";
-    dataName.value = "";
-    dataDate.value = "";
 
+    
+    
+    
  
-}
 
-// Checking the table for current transactions
+
+
 
