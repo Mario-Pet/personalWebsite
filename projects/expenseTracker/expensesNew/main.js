@@ -20,7 +20,6 @@ for (i = endYear; i > startYear - 1; i--) {
 
 function retrieveData(event) {
 
-
     function addBalance() {
         // Calculating and converting to readable number
         balance = Number(balance) + Number(dataAmount.value);
