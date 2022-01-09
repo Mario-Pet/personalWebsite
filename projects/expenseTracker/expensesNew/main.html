@@ -15,7 +15,16 @@
 
             <div class="tableHeader">
                 <p id="balance">0€</p>
-                <select name="yearpicker" id="yearpicker"></select>
+                <div>
+                    <select name="currecy" id="currency" class="currency selectors">
+                        <option id="€">€</option>
+                        <option id="$">$</option>
+                        <option id="BAM">BAM</option>
+                    </select>
+                    <select name="yearpicker" id="yearpicker" class="selectors"></select>
+                </div>
+                
+                
             </div>
 
             <table class="table">
@@ -46,7 +55,7 @@
         <div class="addTable">
             <form action="" id="form" onsubmit="retrieveData(event)">
                 <input class="inputName" type="text" name="name" placeholder="name" maxlength="60" id="name" required>
-                <input class="inputAmount" type="number" name="name" placeholder="€" maxlength="10" id="amountInput" required>
+                <input class="inputAmount" type="text" name="amount" placeholder="€" maxlength="13" id="amountInput" pattern="[\-0-9.]+" required>
                 <label class="datepicker"><img class="dateImage" src="Image.png"><input type="date" value="" id="date" required></label>
                 <input type="submit" value="OK" class="submitButton">
             </form>

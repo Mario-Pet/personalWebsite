@@ -19,6 +19,26 @@ for (i = endYear; i > startYear - 1; i--) {
 }
 
 function retrieveData(event) {
+
+
+    function addBalance() {
+        // Calculating and converting to readable number
+        balance = Number(balance) + Number(dataAmount.value);
+        balanceDisplay = calcBalance(balance)
+
+        // Assigning the calculated balance to the element
+        balanceScreen = document.getElementById("balance");
+        balanceScreen.innerHTML = `${balanceDisplay}€`;
+
+    }
+
+    function clearingFields() {
+        // Clearing the input fields
+        dataAmount.value = "";
+        dataName.value = "";
+        dataDate.value = "";
+    }
+
     // Retriviing Data 
     event.preventDefault();
     let dataName = document.getElementById("name");
@@ -52,92 +72,62 @@ function retrieveData(event) {
     var tdElementStatus = document.createElement("td");
     trElement.appendChild(tdElementStatus);
     tdElementStatus.setAttribute("id", `status`)
-   
-    
-    function statusDecider() {
 
+
+    function statusDecider() {
+        // Calculating a random number to decide the status
         function rndmInt(x) {
             return Math.floor(Math.random() * x)
         }
-        let storedRandomxValue = rndmInt(3);
-    
-        
 
+        let storedRandomValue = rndmInt(3);
+
+        // if random number is 0, status is approved
         if (storedRandomValue === 0) {
-
-            tdElementStatus.innerHTML = "active";
+            tdElementStatus.innerHTML = "approved";
             tdElementStatus.setAttribute("class", "thStatusActive");
             addBalance()
             clearingFields()
 
-        } else if (storedRandomValue === 1) {
-            console.log("Pending" + storedRandomValue)
+        } else if (storedRandomValue === 1) { // if random number is 1, status is pending
+
             tdElementStatus.innerHTML = "pending";
             tdElementStatus.setAttribute("class", "thStatusPending");
+
+            // Pending will coin flip to decide if the status will be denied or approved
             function decider() {
+
                 let pendingStoredRandomValue = rndmInt(2);
+                // Status is approved
                 if (pendingStoredRandomValue === 0) {
+
                     addBalance()
-                    console.log("AA" + pendingStoredRandomValue)
-                    tdElementStatus.innerHTML = "active";
+                    tdElementStatus.innerHTML = "approved";
                     tdElementStatus.setAttribute("class", "thStatusActive");
                     clearingFields()
-                    
-                } else if (pendingStoredRandomValue === 1) {
-                    console.log("AA" + pendingStoredRandomValue)
+
+                } else if (pendingStoredRandomValue === 1) { // Status is denied
+
                     tdElementStatus.innerHTML = "denied";
-                tdElementStatus.setAttribute("class", "thStatusDenied");
-                clearingFields()
-                } 
+                    tdElementStatus.setAttribute("class", "thStatusDenied");
+                    clearingFields()
+
+                }
             }
             setTimeout(decider, 5000)
-           
 
-        } else if (storedRandomValue === 2) {
-            console.log("Denied" + storedRandomValue)
+
+        } else if (storedRandomValue === 2) { // If random number is 2, status is denied
+
             tdElementStatus.innerHTML = "denied";
             tdElementStatus.setAttribute("class", "thStatusDenied");
             clearingFields()
+
         }
 
     }
 
+    statusDecider() // calls to decide the status
 
-    statusDecider()
-
-
-
-
-
-    
-        
-    function addBalance() {
-    // Calculating and converting to readable number
-    
-        
-    balance = Number(balance) + Number(dataAmount.value);
-    balanceDisplay = calcBalance(balance)
-
-   
-    // Assigning the calculated balance to the element
-    balanceScreen = document.getElementById("balance");
-    balanceScreen.innerHTML = `${balanceDisplay}€`;
-    
-    }
-    function clearingFields() {
-        // Clearing the input fields
-        dataAmount.value = "";
-        dataName.value = "";
-        dataDate.value = "";
-    }
-    }
-
-
-    
-    
-    
- 
-
-
-
+}
 

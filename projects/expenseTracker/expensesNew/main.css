@@ -55,7 +55,6 @@ body {
   width: 90%;
   align-items: center;
   font-size: 30px;
-  flex-direction: row;
   justify-content: space-between;
 }
 
@@ -64,9 +63,12 @@ body {
   color: #9d5dea;
 }
 
-#yearpicker {
+.currency {
+  width: 30px;
+  text-overflow: ellipsis;
+}
+.selectors {
   background-color: #353436;
-  /*color: #9d5dea;*/
   color: white;
   border: none;
   color: #9d5dea;
