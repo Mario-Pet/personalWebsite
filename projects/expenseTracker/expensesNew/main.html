@@ -14,9 +14,9 @@
         <div class="mainTable">
 
             <div class="tableHeader">
-                <p id="balance">0€</p>
+                <p id="balanceP" class="balance"><span id="balance">0</span><span id="currency">€</span></p>
                 <div>
-                    <select name="currecy" id="currency" class="currency selectors">
+                    <select name="currecy" id="currencySelector" class="currency selectors" onchange="currencyChanger()">
                         <option id="€">€</option>
                         <option id="$">$</option>
                         <option id="BAM">BAM</option>

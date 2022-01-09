@@ -58,13 +58,14 @@ body {
   justify-content: space-between;
 }
 
-#balance {
+.balance {
   padding: 25px 0px;
   color: #9d5dea;
 }
 
 .currency {
   width: 30px;
+  max-width: 150px;
   text-overflow: ellipsis;
 }
 .selectors {

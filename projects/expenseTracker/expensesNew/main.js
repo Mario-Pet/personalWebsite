@@ -1,6 +1,9 @@
 // Initial balance 
 let balance = 0;
 
+// Initial Currency
+var currentCurrencyHTML = "€";
+document.querySelector("#currency").textContent = currentCurrencyHTML;
 // Making the spaces in between the number
 function calcBalance(x) {
     var parts = x.toString().split(".");
@@ -26,9 +29,9 @@ function retrieveData(event) {
         balanceDisplay = calcBalance(balance)
 
         // Assigning the calculated balance to the element
-        balanceScreen = document.getElementById("balance");
-        balanceScreen.innerHTML = `${balanceDisplay}€`;
-
+        balanceScreen = document.getElementById("balance")
+        balanceScreen.textContent = balanceDisplay;
+        
     }
 
     function clearingFields() {
@@ -101,12 +104,13 @@ function retrieveData(event) {
                 if (pendingStoredRandomValue === 0) {
 
                     addBalance()
+                    clearingFields()
                     tdElementStatus.innerHTML = "approved";
                     tdElementStatus.setAttribute("class", "thStatusActive");
-                    clearingFields()
+                    
 
                 } else if (pendingStoredRandomValue === 1) { // Status is denied
-
+                    
                     tdElementStatus.innerHTML = "denied";
                     tdElementStatus.setAttribute("class", "thStatusDenied");
                     clearingFields()
@@ -129,4 +133,36 @@ function retrieveData(event) {
     statusDecider() // calls to decide the status
 
 }
+
+function currencyChanger() {
+    const currencySelector = document.querySelector("#currencySelector")
+
+
+
+    if (currencySelector.value === "€") {
+        currentCurrencyHTML = "€";
+        document.querySelector("#currency").textContent = currentCurrencyHTML;
+
+        
+
+    } else if (currencySelector.value === "$") {
+        currentCurrencyHTML = "$";
+        document.querySelector("#currency").textContent = currentCurrencyHTML;
+
+        if (currentCurrencyHTML == "$") {
+            console.log(balance)
+            balance = balance * 1.1361002677;
+            console.log(balance)
+            balanceDisplay = calcBalance(balance.toFixed(2))
+            balanceScreen = document.getElementById("balance")
+            balanceScreen.textContent = balanceDisplay;
+        }
+
+    } else if (currencySelector.value === "BAM") {
+        currentCurrencyHTML = "KM"
+        document.querySelector("#currency").textContent = currentCurrencyHTML;
+    }
+
+}
+currencyChanger(balance)
 
