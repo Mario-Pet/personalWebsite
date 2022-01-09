@@ -150,9 +150,8 @@ function currencyChanger() {
         document.querySelector("#currency").textContent = currentCurrencyHTML;
 
         if (currentCurrencyHTML == "$") {
-            console.log(balance)
+
             balance = balance * 1.1361002677;
-            console.log(balance)
             balanceDisplay = calcBalance(balance.toFixed(2))
             balanceScreen = document.getElementById("balance")
             balanceScreen.textContent = balanceDisplay;
