@@ -1,6 +1,11 @@
 // Initial balance 
 let balance = 0;
 
+
+const balance = {
+    current: 0,
+    
+}
 // Initial Currency
 var currentCurrencyHTML = "€";
 document.querySelector("#currency").textContent = currentCurrencyHTML;
@@ -138,19 +143,15 @@ function currencyChanger() {
     const currencySelector = document.querySelector("#currencySelector")
 
 
-
     if (currencySelector.value === "€") {
         currentCurrencyHTML = "€";
         document.querySelector("#currency").textContent = currentCurrencyHTML;
-
         
-
     } else if (currencySelector.value === "$") {
         currentCurrencyHTML = "$";
         document.querySelector("#currency").textContent = currentCurrencyHTML;
 
         if (currentCurrencyHTML == "$") {
-
             balance = balance * 1.1361002677;
             balanceDisplay = calcBalance(balance.toFixed(2))
             balanceScreen = document.getElementById("balance")
