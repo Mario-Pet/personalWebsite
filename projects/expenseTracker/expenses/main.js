@@ -1,3 +1,6 @@
+const createElementWithOptions = (type, options = {}) =>
+  Object.assign(document.createElement(type), options);
+
 const getRandomNumber = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
 
@@ -32,9 +35,21 @@ document.querySelector("form").addEventListener("submit", (e) => {
     e.preventDefault();
     const data = new FormData(e.target);
     const row = document.createElement("tr");
+
+    const statusses = statusDecider.get();
+    const statusCell = createElementWithOptions("td", {
+        textContent: statusses[0],
+        className: statusses.join(" ")
+    })
+    console.log(statusCell.className)
     document.querySelector("table tbody").append(row);
 
     row.append(
-        ...Array.from()
+        ...Array.from(document.querySelectorAll("table th:not(:last-child")).map((th) => 
+        createElementWithOptions("td", {
+            textContent: `${data.get(th.textContent)}${th.textContent === "amount" ? "€" : ""}`
+        })),
+        statusCell
     )
+    
 })
