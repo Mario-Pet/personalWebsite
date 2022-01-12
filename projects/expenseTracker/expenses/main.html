@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
+<main>
     <div class="container">
 
         <div class="mainTable">
@@ -53,7 +54,7 @@
         </div>
 
         <div class="addTable">
-            <form action="" id="form" onsubmit="retrieveData(event)">
+            <form action="" id="form">
                 <input class="inputName" type="text" name="name" placeholder="name" maxlength="60" id="name" required>
                 <input class="inputAmount" type="text" name="amount" placeholder="€" maxlength="13" id="amountInput" pattern="[\-0-9.]+" required>
                 <label class="datepicker"><img class="dateImage" src="Image.png"><input type="date" value="" name="date" id="date" required></label>
@@ -62,6 +63,6 @@
         </div>
 
     </div>
-    
+</main>
 </body>
 </html>

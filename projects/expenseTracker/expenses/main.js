@@ -4,7 +4,8 @@ const getRandomNumber = (arr) => arr[Math.floor(Math.random() * arr.length)];
 const balance = {
     current: 0,
     add(n) {
-
+        balance.current += Number(n)
+        document.querySelector("#balance").textContent = Intl.NumberFormat("fr-FR").format(balance.current)
     },
     currency: "$"
 }
@@ -21,11 +22,19 @@ const statusDecider = {
         ["pending", "approved"],
         ["pending", "denied"],
         ["denied"]
-    ]
+    ],
+    get() {
+        return getRandomNumber(statusDecider.statusses)
+    }
 }
 
 document.querySelector("form").addEventListener("submit", (e) => {
     e.preventDefault();
     const data = new FormData(e.target);
-    console.log(data.get("date"))
+    const row = document.createElement("tr");
+    document.querySelector("table tbody").append(row);
+
+    row.append(
+        ...Array.from()
+    )
 })
