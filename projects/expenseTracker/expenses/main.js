@@ -47,11 +47,24 @@ document.querySelector("form").addEventListener("submit", (e) => {
     row.append(
         ...Array.from(document.querySelectorAll("table th:not(:last-child")).map((th) => 
         createElementWithOptions("td", {
-            textContent: `${data.get(th.textContent)}${th.textContent === "amount" ? "€" : ""}`, class: "lmao"
+            textContent: `${data.get(th.textContent)}${th.textContent === "amount" ? "€" : ""}`
         })),
         statusCell
     );
+
+    if (statusses.length > 1) {
+        setTimeout(() => {
+            statusCell.textContent = statusses[1];
+            statusCell.classList.remove(statusses[0]);
+
+            if (statusses.includes("approved"))
+            balance.add(data.get("amount"));
+        }, 5000)
+    } else {
+        if (statusses.includes("approved"))
+        balance.add(data.get("amount"));
+    }
     
 
-    
+    e.target.reset();
 })
