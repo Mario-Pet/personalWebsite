@@ -41,15 +41,17 @@ document.querySelector("form").addEventListener("submit", (e) => {
         textContent: statusses[0],
         className: statusses.join(" ")
     })
-    console.log(statusCell.className)
-    document.querySelector("table tbody").append(row);
 
+    document.querySelector("table tbody").append(row);
+    console.log(statusCell)
     row.append(
         ...Array.from(document.querySelectorAll("table th:not(:last-child")).map((th) => 
         createElementWithOptions("td", {
-            textContent: `${data.get(th.textContent)}${th.textContent === "amount" ? "€" : ""}`,
-        }),
+            textContent: `${data.get(th.textContent)}${th.textContent === "amount" ? "€" : ""}`, class: "lmao"
+        })),
         statusCell
-    ))
+    );
+    
+
     
 })
