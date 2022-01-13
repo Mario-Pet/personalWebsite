@@ -68,3 +68,9 @@ document.querySelector("form").addEventListener("submit", (e) => {
 
     e.target.reset();
 })
+
+
+document.querySelector("#currencySelector").addEventListener("click", () => {
+    let currentCurrency = document.querySelector("#currency").textContent
+    console.log(currentCurrency)
+})
