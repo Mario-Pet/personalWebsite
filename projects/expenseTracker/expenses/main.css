@@ -194,6 +194,7 @@ form {
 .table {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 table {
@@ -229,6 +230,9 @@ tbody {
   max-height: 450px;
   overflow-y: auto;
   color: #9d5dea;
+
+  display: table-row-group;
+  vertical-align: middle;
 }
 
 .thStatusPending {

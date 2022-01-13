@@ -47,9 +47,9 @@ document.querySelector("form").addEventListener("submit", (e) => {
     row.append(
         ...Array.from(document.querySelectorAll("table th:not(:last-child")).map((th) => 
         createElementWithOptions("td", {
-            textContent: `${data.get(th.textContent)}${th.textContent === "amount" ? "€" : ""}`
-        })),
+            textContent: `${data.get(th.textContent)}${th.textContent === "amount" ? "€" : ""}`,
+        }),
         statusCell
-    )
+    ))
     
 })

@@ -1,0 +1,15 @@
+table thead {
+  text-align: left;
+  border: 1px solid black;
+}
+th,
+td {
+  border: 1px solid black;
+  word-break: break-all;
+}
+table {
+  display: table;
+  width: 80%;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
