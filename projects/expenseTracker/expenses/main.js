@@ -72,17 +72,16 @@ document.querySelector("form").addEventListener("submit", (e) => {
     e.target.reset();
 })
 
-
 document.querySelector("#currencySelector").addEventListener("click", () => {
     let currentCurrency = document.querySelector("#currencySelector").value
-    console.log(currentCurrency)
 })
 
-document.querySelector("#currencySelector").addEventListener("onchange", () => {
+function onChangeCurrency() {
     let newCurrency = document.querySelector("#currencySelector").value
-    console.log(newCurrency)
-})
 
-function change() {
-    console.log("dsa")
+    if (currentCurrency === "€" && newCurrency === "$") {
+        balance.current = balance.current * 1.1361002677
+        document.querySelector("#balance").textContent = balance.current;
+    }
 }
+
