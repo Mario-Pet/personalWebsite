@@ -8,6 +8,7 @@
   --green: #4ff85d;
   --yellow: #f8f84f;
   --red: #f84f4f;
+  --textWhite: #c7c7c7;
 }
 
 body {
@@ -19,7 +20,7 @@ body {
 
   background-color: var(--blackBG);
   font-family: "Roboto Mono", monospace;
-  color: white;
+  color: var(--textWhite);
   /*color: #9d5dea;*/
 }
 
@@ -80,7 +81,7 @@ body {
 }
 .selectors {
   background-color: var(--darker);
-  color: white;
+  color: var(--textWhite);
   border: none;
   color: var(--purple);
 }
@@ -112,7 +113,7 @@ body {
   border: none;
   background-color: var(--lightishGray);
   text-align: center;
-  color: white;
+  color: var(--textWhite);
 }
 .inputName::placeholder {
   text-align: center;
@@ -128,7 +129,7 @@ body {
   border: none;
   background-color: #474648;
   text-align: center;
-  color: white;
+  color: var(--textWhite);
 }
 
 .inputAmount::placeholder {
@@ -224,6 +225,10 @@ td {
 th {
   font-size: 22px;
   color: var(--purple);
+}
+
+td {
+  color: var(--textWhite);
 }
 
 tbody {

@@ -51,7 +51,9 @@ document.querySelector("form").addEventListener("submit", (e) => {
         })),
         statusCell
     );
-
+    if (statusCell.textContent === "pending") {
+        statusCell.setAttribute("class", "pending")
+    }
     if (statusses.length > 1) {
         setTimeout(() => {
             statusCell.textContent = statusses[1];
@@ -59,6 +61,7 @@ document.querySelector("form").addEventListener("submit", (e) => {
 
             if (statusses.includes("approved"))
             balance.add(data.get("amount"));
+            statusCell.setAttribute("class", "approved")
         }, 5000)
     } else {
         if (statusses.includes("approved"))
@@ -71,6 +74,15 @@ document.querySelector("form").addEventListener("submit", (e) => {
 
 
 document.querySelector("#currencySelector").addEventListener("click", () => {
-    let currentCurrency = document.querySelector("#currency").textContent
+    let currentCurrency = document.querySelector("#currencySelector").value
     console.log(currentCurrency)
 })
+
+document.querySelector("#currencySelector").addEventListener("onchange", () => {
+    let newCurrency = document.querySelector("#currencySelector").value
+    console.log(newCurrency)
+})
+
+function change() {
+    console.log("dsa")
+}
