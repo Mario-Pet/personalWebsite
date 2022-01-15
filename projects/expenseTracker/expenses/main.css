@@ -165,6 +165,7 @@ body {
   opacity: 0;
   cursor: pointer;
 }
+
 .datepicker > input[type="date"]::-webkit-calendar-picker-indicator {
   position: absolute;
   top: -150%;
@@ -235,12 +236,10 @@ tbody {
   color: var(--purple);
   display: table-row-group;
   vertical-align: middle;
-}
-
-#mainTBody {
   overflow-y: auto;
   max-height: 200px;
 }
+
 .pending {
   color: var(--yellow);
 }

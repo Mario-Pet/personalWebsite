@@ -57,10 +57,12 @@ document.querySelector("form").addEventListener("submit", (e) => {
         statusCell
     );
 
+    // Adding pending class if the status is pending
     if (statusCell.textContent === "pending") {
         statusCell.setAttribute("class", "pending")
     }
 
+    // if it is a pending status then it assigns a class  and adds value in appropriate currency depending if the status includes "approved" or not 
     if (statusses.length > 1) {
 
         setTimeout(() => {
@@ -84,7 +86,8 @@ document.querySelector("form").addEventListener("submit", (e) => {
         }, 5000)
 
     } else {
-
+        
+        // Normal adding without the pending status
         if (statusses.includes("approved")) {
 
             if (balance.currency === "$") {
@@ -96,6 +99,7 @@ document.querySelector("form").addEventListener("submit", (e) => {
             }
         }
 
+        // Assigning the denied class to the denied status
         if (statusses.includes("denied")) {
             statusCell.setAttribute("class", "denied")
         }
@@ -104,13 +108,17 @@ document.querySelector("form").addEventListener("submit", (e) => {
       e.target.reset()  
     })
 
+// Event Listener to grab the value of the previous currency for later comparisson
 document.querySelector("#currencySelector").addEventListener("click", () => {
     balance.currency = document.querySelector("#currencySelector").value
 })
 
+
 function onChangeCurrency() {
+    // Grabs value of new currency that the selector changed to
     let newCurrency = document.querySelector("#currencySelector").value
 
+    // Depending on the last and new value applies multiplication in this case and changes the placeholder, currency property.
     if (balance.currency === "€" && newCurrency === "$") {
         balance.current = balance.current * 1.1452051406;
 
@@ -124,6 +132,7 @@ function onChangeCurrency() {
 
     }
 
+    // Depending on the last and new value applies division in this case and changes the placeholder, currency property.
     if (balance.currency === "$" && newCurrency === "€") {
 
         balance.current = balance.current / 1.1452051406;
@@ -137,6 +146,6 @@ function onChangeCurrency() {
         document.querySelector("#amountInput").placeholder = "€";
     }
 
-    // Changing Table Contents
+
 }
 
