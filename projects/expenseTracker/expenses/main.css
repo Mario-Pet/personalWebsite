@@ -237,6 +237,10 @@ tbody {
   vertical-align: middle;
 }
 
+#mainTBody {
+  overflow-y: auto;
+  max-height: 200px;
+}
 .pending {
   color: var(--yellow);
 }
