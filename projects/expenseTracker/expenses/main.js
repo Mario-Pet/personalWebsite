@@ -79,8 +79,12 @@ document.querySelector("form").addEventListener("submit", (e) => {
         if (statusses.includes("approved")) {
             if (balance.currency === "$") {
                 var amount = data.get("amount")
-                balance.add(amount * 1.1452051406);
+                console.log("lol")
+                console.log(balance.currency)
+                amount = amount * 1.1452051406
+                balance.add(amount);
             } else if (balance.currency === "€") {
+                console.log(balance.currency)
                 balance.add(data.get("amount"))
             }
         }
@@ -89,6 +93,7 @@ document.querySelector("form").addEventListener("submit", (e) => {
             statusCell.setAttribute("class", "denied")
         }
     }
+
       e.target.reset()  
     })
     
@@ -102,18 +107,24 @@ document.querySelector("#currencySelector").addEventListener("click", () => {
 function onChangeCurrency() {
     let newCurrency = document.querySelector("#currencySelector").value
 
+
     if (balance.currency === "€" && newCurrency === "$") {
         balance.current = balance.current * 1.1452051406;
         document.querySelector("#balance").textContent = balance.current.toFixed(2);
         document.querySelector("#currency").textContent = "$";
         document.querySelector("#balance").textContent = Intl.NumberFormat("fr-FR").format(balance.current)
-    } else if (newCurrency == null) {
-        balance.add(data.get("amount"))
+        balance.currency = newCurrency;
+        console.log(balance.current)
     }
 
-    if (balance.currency === "$" && newCurrency === "€") {}
+    if (balance.currency === "$" && newCurrency === "€") {
+        balance.current = balance.current / 1.1452051406;
+        document.querySelector("#balance").textContent = balance.current.toFixed(1);
+        document.querySelector("#currency").textContent = "€";
+        document.querySelector("#balance").textContent = Intl.NumberFormat("fr-FR").format(balance.current)
+        balance.currency = newCurrency;
+        console.log(balance.current)
+
+    }
 }
 
-console.log(312312 * 1.1415303584);
-console.log(1 -0.14153035840000006)
-console.log(357661.308 * 0.8784696415999999)
