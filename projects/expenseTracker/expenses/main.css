@@ -267,7 +267,9 @@ td {
   table {
     width: 600px;
   }
-
+  form {
+    width: 90%;
+  }
   .addTable {
     width: 610px;
   }
@@ -279,6 +281,9 @@ td {
   }
   table {
     width: 550px;
+  }
+  form {
+    width: 90%;
   }
 
   .addTable {
@@ -309,5 +314,282 @@ td {
 
   .addTable {
     width: 530px;
+  }
+
+  form {
+    width: 90%;
+  }
+
+  .inputName {
+    width: 206px;
+  }
+
+  .inputAmount {
+    width: 113px;
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .mainTable {
+    width: 500px;
+  }
+  table {
+    width: 450px;
+  }
+
+  .addTable {
+    width: 490px;
+  }
+
+  form {
+    width: 90%;
+  }
+
+  .inputName {
+    width: 206px;
+  }
+
+  .inputAmount {
+    width: 113px;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .mainTable {
+    width: 420px;
+  }
+  table {
+    width: 370px;
+  }
+
+  .addTable {
+    width: 390px;
+  }
+  th {
+    font-size: 20px;
+  }
+
+  td {
+    font-size: 12px;
+  }
+
+  form {
+    width: 90%;
+  }
+
+  .inputName {
+    width: 132px;
+  }
+
+  .inputAmount {
+    width: 72px;
+  }
+}
+
+@media only screen and (max-width: 460px) {
+  .mainTable {
+    width: 370px;
+  }
+  table {
+    width: 320px;
+  }
+  th {
+    font-size: 20px;
+  }
+
+  td {
+    font-size: 12px;
+  }
+  .addTable {
+    width: 330px;
+  }
+
+  form {
+    width: 90%;
+  }
+
+  .inputName {
+    width: 105px;
+  }
+
+  .inputAmount {
+    width: 57px;
+  }
+}
+@media only screen and (max-width: 460px) {
+  .mainTable {
+    width: 370px;
+  }
+  table {
+    width: 320px;
+  }
+  th {
+    font-size: 14px;
+  }
+
+  td {
+    font-size: 12px;
+  }
+  .addTable {
+    width: 330px;
+  }
+
+  form {
+    width: 90%;
+  }
+
+  .inputName {
+    width: 105px;
+  }
+
+  .inputAmount {
+    width: 57px;
+  }
+}
+
+@media only screen and (max-width: 390px) {
+  .mainTable {
+    width: 320px;
+  }
+  table {
+    width: 270px;
+  }
+  th {
+    font-size: 10px;
+  }
+
+  td {
+    font-size: 10px;
+  }
+  #balance {
+    font-size: 20px;
+  }
+  #currency {
+    font-size: 20px;
+  }
+  .addTable {
+    width: 300px;
+  }
+
+  form {
+    width: 90%;
+  }
+
+  .inputName {
+    width: 95px;
+  }
+
+  .inputAmount {
+    width: 47px;
+  }
+}
+
+@media only screen and (max-width: 370px) {
+  .mainTable {
+    width: 320px;
+  }
+  table {
+    width: 270px;
+  }
+  th {
+    font-size: 15px;
+  }
+
+  td {
+    font-size: 8px;
+  }
+  #balance {
+    font-size: 20px;
+  }
+  #currency {
+    font-size: 20px;
+  }
+  .addTable {
+    width: 240px;
+    height: 210px;
+  }
+  .inputName {
+    width: 95px;
+    margin: 5px;
+  }
+  form {
+    flex-direction: column;
+  }
+  .inputAmount {
+    width: 47px;
+    margin: 10px;
+  }
+  #date {
+    margin: 10px;
+  }
+
+  .submitButton {
+    margin: 5px;
+  }
+}
+
+@media only screen and (max-width: 330px) {
+  .mainTable {
+    width: 270px;
+  }
+  table {
+    width: 220px;
+  }
+  th {
+    font-size: 8px;
+  }
+
+  td {
+    font-size: 8px;
+  }
+  #balance {
+    font-size: 20px;
+  }
+  #currency {
+    font-size: 20px;
+  }
+  .addTable {
+    width: 240px;
+    height: 210px;
+  }
+
+  form {
+    width: 90%;
+    flex-direction: column;
+  }
+
+  .inputName {
+    width: 95px;
+    margin: 5px;
+  }
+
+  .inputAmount {
+    width: 47px;
+    margin: 10px;
+  }
+  #date {
+    margin: 10px;
+  }
+
+  .submitButton {
+    margin: 5px;
+  }
+}
+
+@media only screen and (max-height: 720px) {
+  .mainTable {
+    height: 550px;
+  }
+}
+
+@media only screen and (max-height: 670px) {
+  .mainTable {
+    height: 500px;
+  }
+}
+
+@media only screen and (max-height: 610px) {
+  .mainTable {
+    height: 450px;
   }
 }
