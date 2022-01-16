@@ -1,15 +1,21 @@
+:root {
+  --purple: #9d5dea;
+  --lightPurple: #b691e3;
+  --dark: #242326;
+}
+
 body {
-  background-color: #242326;
+  background-color: var(--dark);
+  font-family: "Roboto Mono", monospace;
 }
 
 a {
-  font-family: "Roboto Mono", monospace;
   font-size: 15px;
-  color: #9d5dea;
+  color: var(--purple);
   text-decoration: none;
 }
 a:hover {
-  color: #b691e3;
+  color: var(--lightPurple);
 }
 
 section {
@@ -19,4 +25,9 @@ section {
   align-items: center;
   text-align: center;
   min-height: 50vh;
+}
+
+.source {
+  color: var(--purple);
+  font-size: 10px;
 }
