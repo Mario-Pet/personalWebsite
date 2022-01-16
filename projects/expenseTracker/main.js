@@ -1,3 +1,4 @@
+// Creating a way to create elements easier and creating an arrow function that picks a number based on an array.
 const createElementWithOptions = (type, options = {}) =>
   Object.assign(document.createElement(type), options);
 
