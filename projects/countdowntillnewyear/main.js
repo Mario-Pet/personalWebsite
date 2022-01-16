@@ -1,7 +1,7 @@
 setInterval(() => {
-    lmao = new Date(new Date().getFullYear()+1, 0, 1);
-    lmao1 = new Date();
-    let distance = lmao - lmao1;
+    nextYear = new Date(new Date().getFullYear()+1, 0, 1);
+    todaysDate = new Date();
+    let distance = nextYear - todaysDate;
     
     
     let days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -9,12 +9,13 @@ setInterval(() => {
     let minutes = Math.floor(distance % (1000 * 60 * 60) / (1000 * 60));
     let seconds = Math.floor(distance % (1000 * 60) / 1000);
     
-    let daysId = document.getElementById("days")
-    daysId.innerHTML = days;
-    let hoursId = document.getElementById("hours")
-    hoursId.innerHTML = hours;
-    let minutesId = document.getElementById("minutes")
-    minutesId.innerHTML = minutes;
-    let secondsId = document.getElementById("seconds")
-    secondsId.innerHTML = seconds;
+    let daysId = document.querySelector("#days")
+    daysId.textContent = days;
+    let hoursId = document.querySelector("#hours")
+    hoursId.textContent = hours;
+    let minutesId = document.querySelector("#minutes")
+    minutesId.textContent = minutes;
+    let secondsId = document.querySelector("#seconds")
+    secondsId.textContent = seconds;
+    
  }, 1000)
