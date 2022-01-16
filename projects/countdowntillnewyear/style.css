@@ -2,6 +2,9 @@
 
 body {
   background-color: #242326;
+  display: flex;
+  align-content: center;
+  justify-content: center;
 }
 #container {
   height: 450px;
@@ -24,13 +27,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 300px;
 }
 
-#section > article {
+article {
   color: #9d5dea;
   height: 120px;
-  width: 120px;
-  margin: 20px 30px;
+
+  margin: 0% 5%;
   font-size: 12px;
   font-family: "Roboto Mono", monospace;
 }
@@ -86,4 +90,72 @@ body {
 }
 #secondsBox > div {
   margin-top: 35px;
+}
+
+/* Styling */
+
+.headline {
+  font-size: 20px;
+}
+
+article > div {
+  font-size: 15px;
+}
+@media only screen and (max-width: 5000px) {
+  .headline {
+    font-size: 20px;
+  }
+  section {
+    width: 400px !important;
+  }
+  article > div {
+    font-size: 20px;
+  }
+
+  article > p {
+    font-size: 15px;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .headline {
+    font-size: 20px;
+  }
+  section {
+    width: 400px !important;
+  }
+  article > div {
+    font-size: 20px;
+  }
+
+  article > p {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 370px) {
+  .headline {
+    font-size: 20px;
+  }
+  section {
+    width: 200px !important;
+  }
+  article > div {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .headline {
+    font-size: 18px;
+  }
+  section {
+    width: 150px !important;
+  }
+  article > div {
+    font-size: 12px;
+  }
+
+  article > p {
+    font-size: 10px;
+  }
 }
