@@ -16,3 +16,6 @@ Lower resolution is supported. So the project will run on any mobile or desktop 
 
 Code is brokedown with comments inside of the .js file.
 
+## Organization
+![image](https://user-images.githubusercontent.com/64871557/149671648-5363ea6d-132b-4915-b3b6-fe3cd11eacf0.png)
+
