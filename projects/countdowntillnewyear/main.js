@@ -16,13 +16,9 @@ setInterval(() => {
     let seconds = Math.floor(distance % (1000 * 60) / 1000);
     
     // Assigning the values to the corresponding html elements
-    let daysId = document.querySelector("#days")
-    daysId.textContent = days;
-    let hoursId = document.querySelector("#hours")
-    hoursId.textContent = hours;
-    let minutesId = document.querySelector("#minutes")
-    minutesId.textContent = minutes;
-    let secondsId = document.querySelector("#seconds")
-    secondsId.textContent = seconds;
+    document.querySelector("#days").textContent = days;
+    document.querySelector("#hours").textContent = hours;
+    document.querySelector("#minutes").textContent = minutes;
+    document.querySelector("#seconds").textContent = seconds;
     
  }, 1000)
