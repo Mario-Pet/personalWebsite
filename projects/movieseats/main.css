@@ -11,34 +11,45 @@ body {
   justify-content: center;
   align-items: center;
 
+  font-family: "Roboto Mono", monospace;
+
   min-height: 60vh;
 }
 #top {
   width: 300px;
 }
 select {
-  width: 90%;
+  width: 100%;
+  text-align: center;
 
   color: var(--purple);
   background-color: var(--dark);
   border: none;
+  font-family: "Roboto Mono", monospace;
 }
 
 #info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
   margin: 20px 0px;
-  width: 300px;
+  width: 350px;
   height: 25px;
 
   border-radius: 5px;
-
+  font-size: 12px;
   background-color: var(--lighterDark);
 }
 
-img {
-  width: 17px;
-  height: 17px;
+.elements {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
 }
 
-.notOccupied {
-  filter: brightness(0) invert(0.5);
+img {
+  width: 15px;
+  height: 15px;
 }
