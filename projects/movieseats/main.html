@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link href="main.css" rel="stylesheet" type="text/css">
     <script defer src="main.js"></script>
 </head>
 <body>
     <div id="mainWrapper">
         <div id="top">
+            <h1>Movie Theater Booth</h1>
             <select>
                 <option><span id="movie">Zack Snyder's Justice League</span> <span id="priceOfMovie"> - 16€</span></option>
                 <option><span id="movie">Spider-Man: No way Home</span> <span id="priceOfMovie"> - 19€</span></option>
@@ -18,19 +20,106 @@
 
             <div id="info">
                 <div class="elements">
-                    <img src="chairNotOccupied.png" class="notOccupied"><span>Not Occupied</span>
-                    <img src="chairOccupied.png" class="occupied"><span>Occupied</span>
-                    <img src="chairSelected.png" class="selected"><span>Selected</span>
+                    <div class="chairs"><img src="chairNotOccupied.png" class="notOccupied"><span>Not Occupied</span></div>
+                    <div class="chairs"><img src="chairOccupied.png" class="occupied"><span>Occupied</span></div>
+                    <div class="chairs"><img src="chairSelected.png" class="selected"><span>Selected</span></div>
                 </div>
             </div>
         </div>
     
         <div id="middle">
-    
+            <section id="left">
+                <div class="chairBreak">
+                    <img src="chairNotOccupied.png" class="chairsMiddle">
+                    <img src="chairNotOccupied.png" class="chairsMiddle">
+                    <img src="chairNotOccupied.png" class="chairsMiddle">
+                </div>
+                <div class="chairBreak">
+                    <img src="chairNotOccupied.png" class="chairsMiddle">
+                    <img src="chairNotOccupied.png" class="chairsMiddle">
+                    <img src="chairNotOccupied.png" class="chairsMiddle">
+                </div>
+                <div class="chairBreak">
+                    <img src="chairNotOccupied.png" class="chairsMiddle">
+                    <img src="chairNotOccupied.png" class="chairsMiddle">
+                    <img src="chairNotOccupied.png" class="chairsMiddle">
+                </div>
+                <div class="chairBreak">
+                    <img src="chairNotOccupied.png" class="chairsMiddle">
+                    <img src="chairNotOccupied.png" class="chairsMiddle">
+                    <img src="chairNotOccupied.png" class="chairsMiddle">
+                </div>
+            </section>
+            
+            <section id="middleSection">
+                <div class="screen"></div>
+                <div class="allTheChairs">
+                    <div class="chairBreak">
+                        <img src="chairNotOccupied.png" class="chairsMiddle">
+                        <img src="chairNotOccupied.png" class="chairsMiddle">
+                        <img src="chairNotOccupied.png" class="chairsMiddle">
+                        <img src="chairNotOccupied.png" class="chairsMiddle">
+                        <img src="chairNotOccupied.png" class="chairsMiddle">
+                        <img src="chairNotOccupied.png" class="chairsMiddle">
+                    </div>
+                    <div class="chairBreak">
+                        <img src="chairNotOccupied.png" class="chairsMiddle">
+                        <img src="chairNotOccupied.png" class="chairsMiddle">
+                        <img src="chairNotOccupied.png" class="chairsMiddle">
+                        <img src="chairNotOccupied.png" class="chairsMiddle">
+                        <img src="chairNotOccupied.png" class="chairsMiddle">
+                        <img src="chairNotOccupied.png" class="chairsMiddle">
+                    </div>
+                    <div class="chairBreak">
+                        <img src="chairNotOccupied.png" class="chairsMiddle">
+                        <img src="chairNotOccupied.png" class="chairsMiddle">
+                        <img src="chairNotOccupied.png" class="chairsMiddle">
+                        <img src="chairNotOccupied.png" class="chairsMiddle">
+                        <img src="chairNotOccupied.png" class="chairsMiddle">
+                        <img src="chairNotOccupied.png" class="chairsMiddle">
+                    </div>
+                    <div class="chairBreak">
+                        <img src="chairNotOccupied.png" class="chairsMiddle">
+                        <img src="chairNotOccupied.png" class="chairsMiddle">
+                        <img src="chairNotOccupied.png" class="chairsMiddle">
+                        <img src="chairNotOccupied.png" class="chairsMiddle">
+                        <img src="chairNotOccupied.png" class="chairsMiddle">
+                        <img src="chairNotOccupied.png" class="chairsMiddle">
+                    </div>
+                </div>
+                
+            </section>
+
+            <section id="right">
+                <div class="chairBreak">
+                    <img src="chairNotOccupied.png" class="chairsMiddle">
+                    <img src="chairNotOccupied.png" class="chairsMiddle">
+                    <img src="chairNotOccupied.png" class="chairsMiddle">
+                </div>
+                <div class="chairBreak">
+                    <img src="chairNotOccupied.png" class="chairsMiddle">
+                    <img src="chairNotOccupied.png" class="chairsMiddle">
+                    <img src="chairNotOccupied.png" class="chairsMiddle">
+                </div>
+                <div class="chairBreak">
+                    <img src="chairNotOccupied.png" class="chairsMiddle">
+                    <img src="chairNotOccupied.png" class="chairsMiddle">
+                    <img src="chairNotOccupied.png" class="chairsMiddle">
+                </div>
+                <div class="chairBreak">
+                    <img src="chairNotOccupied.png" class="chairsMiddle">
+                    <img src="chairNotOccupied.png" class="chairsMiddle">
+                    <img src="chairNotOccupied.png" class="chairsMiddle">
+                </div>
+            </section>
         </div>
     
         <div id="bottom">
-            <p>sentence</p>
+            <span id="receiptSentence">Receive receipt per email.</span>
+            <br>
+            <input type="email" placeholder="hey@test.com" id="emailInput" name="email">
+            <br>
+            <input type="submit" id="submit" value="SUBMIT">
         </div>
     </div>
     
