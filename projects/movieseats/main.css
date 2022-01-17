@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
 
 * {
   padding: 0;
@@ -20,7 +20,7 @@ body {
 
   font-family: "Roboto Mono", monospace;
 
-  min-height: 60vh;
+  min-height: 90vh;
 }
 h1 {
   color: var(--purple);
@@ -45,7 +45,6 @@ select {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  
 
   margin: 20px 0px;
   width: 350px;
@@ -79,7 +78,7 @@ section {
   margin: 3px 5px;
 }
 
-#middleSection{
+#middleSection {
   display: block;
   flex-direction: column;
   margin: 0px 10px;
@@ -93,9 +92,9 @@ img {
   display: block;
   width: 100px;
   height: 50px;
-  margin-top:10px;
-  margin-bottom:30px;
-  
+  margin-top: 10px;
+  margin-bottom: 30px;
+
   background-color: var(--purple);
   box-shadow: 0px 0px 20px 10px var(--purple);
 }
@@ -103,19 +102,17 @@ img {
   display: flex;
   flex-direction: row;
   justify-content: center;
-
 }
 
 .allTheChairs {
   display: block;
 }
 
-#right {
+#rightSection {
   margin: 0px 10px;
 }
 
-
-#left {
+#leftSection {
   margin: 0px 10px;
 }
 #bottom {
@@ -138,7 +135,7 @@ input {
   color: var(--purple);
   background-color: var(--dark);
   box-shadow: none;
-  
+
   text-align: center;
   border: 1px solid var(--purple);
   border-radius: 10px;
