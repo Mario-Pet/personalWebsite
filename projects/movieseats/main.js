@@ -1,10 +1,8 @@
-let imgElement = new Image();
-imgElement.src = "chairNotOccupied.png";
 
 
 
 const leftSection = {
-    chairs: 2,
+    chairs: 4,
     add(n) {
         chairs += 0
     }
@@ -26,13 +24,16 @@ const rightSection = {
     }
 }
 function chairs() {
-
+    
+    let leftSectionElement = document.querySelector("#leftSection")
     // Left Section
     for (i = 0; i < leftSection.chairs; i++) {
         if (leftSection.chairs < 3) {
-            let section = leftSection.section;
-            console.log(section)
-            section.append(imgElement);
+            for (i = 0; i < leftSection.chairs; i++) {
+                let imgElement = new Image();
+                imgElement.src = "chairNotOccupied.png";
+                leftSectionElement.append(imgElement);
+            }
         } else {
             
         }
