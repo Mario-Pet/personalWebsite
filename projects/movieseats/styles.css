@@ -34,6 +34,10 @@ body {
 */
 
 header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
 }
 
@@ -62,7 +66,7 @@ select {
   background-color: var(--lighterDark);
   
 
-  width: 400px;
+  width: 400px !important;
   height: 30px;
 
   display: flex;
@@ -123,7 +127,7 @@ main {
 .screen {
   width: 35%;
   aspect-ratio: 2 / 1;
-  margin: 30zpx 0px;
+  margin: 30px 0px 20px 0px;
   background-color: var(--purple);
   box-shadow: 0 0 20px 10px var(--purple);
 }
@@ -132,7 +136,7 @@ main {
   display: grid;
   width: max-content;
   grid-template-columns: repeat(var(--chairsInRow), auto);
-  margin: 0px 10px;
+  margin: 10px 10px 40px 10px;
 }
 
 .chairsGroup.center {
@@ -142,4 +146,59 @@ main {
 .chairsGroup.side {
   --chairsInRow: 3;
 }
+img {
+  transition: all 0.2s ease;
+}
+img:hover {
+  transform: scale(1.2);
+}
+/*
+  ______ ____   ____ _______ ______ _____  
+ |  ____/ __ \ / __ \__   __|  ____|  __ \ 
+ | |__ | |  | | |  | | | |  | |__  | |__) |
+ |  __|| |  | | |  | | | |  |  __| |  _  / 
+ | |   | |__| | |__| | | |  | |____| | \ \ 
+ |_|    \____/ \____/  |_|  |______|_|  \_\
+ */
 
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#status {
+  color: var(--purple)
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  padding: 5px 5px;
+  margin: 30px 0px 15px 0px;
+
+  text-align: center;
+
+  background-color: var(--dark);
+  color: var(--purple);
+
+  border: 1px solid var(--purple);
+  border-radius: 10px;
+}
+
+button {
+  background-color: var(--purple);
+  border: none;
+  border-radius: 10px;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  box-shadow: 0 0 10px 3px var(--purple);
+}
