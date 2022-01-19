@@ -1,13 +1,17 @@
-// let chairsSelectedElement = document.querySelector("#chairsSelected")
-// let priceOfAllChairsElement = document.querySelector("#priceOfAllChairsSelected")
+function getRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min) + min)
+}
 
-// let numberOfChairsSelected = 20;
-// let priceOfAllChairsSelected = 231312;
+const chairsPreOccupied = getRandomNumber(10, 35);
 
-// chairsSelectedElement.textContent = numberOfChairsSelected;
-// priceOfAllChairsElement.textContent = priceOfAllChairsSelected;
+function addChairs(num) {
 
-function chairAdded(num) {
+}
+addChairs(48);
+
+const chairs = {
+    number: 48,
+    add(num) {
 
     if (num % 2 == "1") {
         side = num / 4;
@@ -15,44 +19,73 @@ function chairAdded(num) {
 
         sideRemainder = (side - parseInt(side))*2;
         centerRemainder = center-parseInt(center);
-        singleSeat = sideRemainder + centerRemainder;
+
         
         for (var i = 0; i < side - 1; i++) {
             let imgUnoccupied = document.createElement("img");
             imgUnoccupied.setAttribute("class", "chair unoccupied");
+            imgUnoccupied.setAttribute("id", i)
             document.querySelector("#leftSection").append(imgUnoccupied)
         }
 
         for (var i = 0; i < center - 1; i++) {
             let imgUnoccupied = document.createElement("img");
             imgUnoccupied.setAttribute("class", "chair unoccupied");
+            imgUnoccupied.setAttribute("id", i)
             document.querySelector("#middleSection").append(imgUnoccupied)
         }
 
         for (var i = 0; i < side - 1; i++) {
             let imgUnoccupied = document.createElement("img");
             imgUnoccupied.setAttribute("class", "chair unoccupied");
+            imgUnoccupied.setAttribute("id", i)
+            document.querySelector("#rightSection").append(imgUnoccupied)
+        }
+        
+        let leftOverChair = getRandomNumber(0, 3);
+        let imgUnoccupied = document.createElement("img");
+        imgUnoccupied.setAttribute("class", "chair unoccupied");
+
+        if (leftOverChair == 0) {
+            document.querySelector("#leftSection").append(imgUnoccupied)
+        } else if (leftOverChair == 1) {
+            document.querySelector("#middleSection").append(imgUnoccupied)
+        } else if (leftOverChair == 2) {
             document.querySelector("#rightSection").append(imgUnoccupied)
         }
 
-
     } else {
+
         side = num / 4;
         center = num / 2;
-        
-    }
-}
-chairAdded(2001);
-function randomChairSelector() {
 
-    function getRandomNumber(min, max) {
-        return Math.floor(Math.random() * (max - min) + min)
-    }
-    
-    const chairsPreOccupied = getRandomNumber(10, 35);
-    
+        for (var i = 0; i < side; i++) {
+            let imgUnoccupied = document.createElement("img");
+            imgUnoccupied.setAttribute("class", "chair unoccupied");
+            imgUnoccupied.setAttribute("id", i)
+            document.querySelector("#leftSection").append(imgUnoccupied)
+        }
+
+        for (var i = 0; i < center; i++) {
+            let imgUnoccupied = document.createElement("img");
+            imgUnoccupied.setAttribute("class", "chair unoccupied");
+            imgUnoccupied.setAttribute("id", i)
+            document.querySelector("#middleSection").append(imgUnoccupied)
+        }
+
+        for (var i = 0; i < side; i++) {
+            let imgUnoccupied = document.createElement("img");
+            imgUnoccupied.setAttribute("class", "chair unoccupied");
+            imgUnoccupied.setAttribute("id", i)
+            document.querySelector("#rightSection").append(imgUnoccupied)
+        }
+        
+        }
+    }, 
+    randomChairSelector(num) {
+        
+    } 
 }
-randomChairSelector()
 
 document.querySelector(".chairSelection").addEventListener("click", (e) => {
     if (e.target.classList.contains("selected")) {e.target.classList.replace("selected", "unoccupied")}
@@ -64,3 +97,5 @@ document.querySelector("form").addEventListener("submit", (e) => {
 
 
 })
+
+window.onload = chairs.add(chairs.number);
