@@ -86,13 +86,13 @@ const chairs = {
     randomChairSelector(num) { 
         
         if (chairs.numberOfRandomChairs % 2 == 1) { // odd
-
+            
         } else if (chairs.numberOfRandomChairs % 2 == 0) { // even
 
         }
 
         // Left section
-        console.log(document.querySelector("#leftSection"))
+        
 
     } 
 }
