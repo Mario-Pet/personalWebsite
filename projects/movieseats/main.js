@@ -11,6 +11,7 @@ addChairs(48);
 
 const chairs = {
     number: 48,
+    numberOfRandomChairs: 25,
     add(num) {
 
     if (num % 2 == "1") {
@@ -82,10 +83,21 @@ const chairs = {
         
         }
     }, 
-    randomChairSelector(num) {
+    randomChairSelector(num) { 
         
+        if (chairs.numberOfRandomChairs % 2 == 1) { // odd
+
+        } else if (chairs.numberOfRandomChairs % 2 == 0) { // even
+
+        }
+
+        // Left section
+        console.log(document.querySelector("#leftSection"))
+
     } 
 }
+
+chairs.randomChairSelector()
 
 document.querySelector(".chairSelection").addEventListener("click", (e) => {
     if (e.target.classList.contains("selected")) {e.target.classList.replace("selected", "unoccupied")}
