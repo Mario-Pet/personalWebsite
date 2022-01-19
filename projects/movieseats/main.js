@@ -25,21 +25,21 @@ const chairs = {
         for (var i = 0; i < side - 1; i++) {
             let imgUnoccupied = document.createElement("img");
             imgUnoccupied.setAttribute("class", "chair unoccupied");
-            imgUnoccupied.setAttribute("id", i)
+            imgUnoccupied.setAttribute("id", `leftSection${i+1}`)
             document.querySelector("#leftSection").append(imgUnoccupied)
         }
 
         for (var i = 0; i < center - 1; i++) {
             let imgUnoccupied = document.createElement("img");
             imgUnoccupied.setAttribute("class", "chair unoccupied");
-            imgUnoccupied.setAttribute("id", i)
+            imgUnoccupied.setAttribute("id", `middleSection${i+1}`)
             document.querySelector("#middleSection").append(imgUnoccupied)
         }
 
         for (var i = 0; i < side - 1; i++) {
             let imgUnoccupied = document.createElement("img");
             imgUnoccupied.setAttribute("class", "chair unoccupied");
-            imgUnoccupied.setAttribute("id", i)
+            imgUnoccupied.setAttribute("id", `rightSection${i+1}`)
             document.querySelector("#rightSection").append(imgUnoccupied)
         }
         
@@ -49,10 +49,13 @@ const chairs = {
 
         if (leftOverChair == 0) {
             document.querySelector("#leftSection").append(imgUnoccupied)
+            imgUnoccupied.id = `leftSection${side+1}`
         } else if (leftOverChair == 1) {
             document.querySelector("#middleSection").append(imgUnoccupied)
+            imgUnoccupied.id = `middleCenter${center+1}`
         } else if (leftOverChair == 2) {
-            document.querySelector("#rightSection").append(imgUnoccupied)
+            document.querySelector("#leftSection").append(imgUnoccupied)
+            imgUnoccupied.id = `leftSection${side+1}`
         }
 
     } else {
@@ -63,21 +66,21 @@ const chairs = {
         for (var i = 0; i < side; i++) {
             let imgUnoccupied = document.createElement("img");
             imgUnoccupied.setAttribute("class", "chair unoccupied");
-            imgUnoccupied.setAttribute("id", i)
+            imgUnoccupied.setAttribute("id", `leftSection${i+1}`)
             document.querySelector("#leftSection").append(imgUnoccupied)
         }
 
         for (var i = 0; i < center; i++) {
             let imgUnoccupied = document.createElement("img");
             imgUnoccupied.setAttribute("class", "chair unoccupied");
-            imgUnoccupied.setAttribute("id", i)
+            imgUnoccupied.setAttribute("id", `middleSection${i+1}`)
             document.querySelector("#middleSection").append(imgUnoccupied)
         }
 
         for (var i = 0; i < side; i++) {
             let imgUnoccupied = document.createElement("img");
             imgUnoccupied.setAttribute("class", "chair unoccupied");
-            imgUnoccupied.setAttribute("id", i)
+            imgUnoccupied.setAttribute("id", `rightSection${i+1}`)
             document.querySelector("#rightSection").append(imgUnoccupied)
         }
         
@@ -86,12 +89,19 @@ const chairs = {
     randomChairSelector(num) { 
         
         if (chairs.numberOfRandomChairs % 2 == 1) { // odd
+            side = num / 4;
+            center = num / 2;
+            sideRemainder = (side - parseInt(side))*2;
+            centerRemainder = center-parseInt(center);
+
+            let leftSectionElement = document.querySelector("#leftSection");
+            console.log(leftSectionElement)
             
         } else if (chairs.numberOfRandomChairs % 2 == 0) { // even
 
         }
 
-        // Left section
+
         
 
     } 
