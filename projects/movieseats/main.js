@@ -4,11 +4,6 @@ function getRandomNumber(min, max) {
 
 const chairsPreOccupied = getRandomNumber(10, 35);
 
-function addChairs(num) {
-
-}
-addChairs(48);
-
 const chairs = {
     number: 48,
     numberOfRandomChairs: 25,
@@ -93,10 +88,24 @@ const chairs = {
             center = num / 2;
             sideRemainder = (side - parseInt(side))*2;
             centerRemainder = center-parseInt(center);
-
-            let leftSectionElement = document.querySelector("#leftSection");
-            console.log(leftSectionElement)
             
+            let leftSectionElement = document.querySelector("#leftSection");
+            leftSectionArray = [];
+            for (var i = 0; i < parseInt(side); i++) {
+                let randomChairNumber = getRandomNumber(0, parseInt(side)) + 1;
+
+
+                if (leftSectionArray.includes(randomChairNumber)) {
+                } else {
+                    leftSectionArray.push(randomChairNumber)
+                }
+            }
+            let modifiedLeftSectionArray = leftSectionArray.map(function(element){return `leftSection${element}`})
+            console.log(modifiedLeftSectionArray)
+            //modifiedLeftSectionArray.map(function (element) {console.log(document.querySelector(element))})
+            for (var i = 0; i < modifiedLeftSectionArray.length; i++) {
+                console.log(document.querySelector(modifiedLeftSectionArray[i]))
+            }
         } else if (chairs.numberOfRandomChairs % 2 == 0) { // even
 
         }
@@ -107,7 +116,7 @@ const chairs = {
     } 
 }
 
-chairs.randomChairSelector()
+chairs.randomChairSelector(chairs.numberOfRandomChairs)
 
 document.querySelector(".chairSelection").addEventListener("click", (e) => {
     if (e.target.classList.contains("selected")) {e.target.classList.replace("selected", "unoccupied")}
@@ -119,5 +128,7 @@ document.querySelector("form").addEventListener("submit", (e) => {
 
 
 })
+array = [1]
+console.log(document.querySelector('leftSection1'))
 
 window.onload = chairs.add(chairs.number);
