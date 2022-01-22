@@ -3,10 +3,11 @@ function getRandomNumber(min, max) {
 }
 
 const chairsPreOccupied = getRandomNumber(10, 35);
+const randomChairElementsArray = []
 
 const chairs = {
     number: 48,
-    numberOfRandomChairs: 25,
+    numberOfRandomChairs: 21,
     add(num) {
 
     if (num % 2 == "1") {
@@ -61,21 +62,21 @@ const chairs = {
         for (var i = 0; i < side; i++) {
             let imgUnoccupied = document.createElement("img");
             imgUnoccupied.setAttribute("class", "chair unoccupied");
-            imgUnoccupied.setAttribute("id", `leftSection${i+1}`)
+            imgUnoccupied.setAttribute("id", `leftSection${i}`)
             document.querySelector("#leftSection").append(imgUnoccupied)
         }
 
         for (var i = 0; i < center; i++) {
             let imgUnoccupied = document.createElement("img");
             imgUnoccupied.setAttribute("class", "chair unoccupied");
-            imgUnoccupied.setAttribute("id", `middleSection${i+1}`)
+            imgUnoccupied.setAttribute("id", `middleSection${i}`)
             document.querySelector("#middleSection").append(imgUnoccupied)
         }
 
         for (var i = 0; i < side; i++) {
             let imgUnoccupied = document.createElement("img");
             imgUnoccupied.setAttribute("class", "chair unoccupied");
-            imgUnoccupied.setAttribute("id", `rightSection${i+1}`)
+            imgUnoccupied.setAttribute("id", `rightSection${i}`)
             document.querySelector("#rightSection").append(imgUnoccupied)
         }
         
@@ -88,24 +89,38 @@ const chairs = {
             center = num / 2;
             sideRemainder = (side - parseInt(side))*2;
             centerRemainder = center-parseInt(center);
-            
+
             let leftSectionElement = document.querySelector("#leftSection");
-            leftSectionArray = [];
-            for (var i = 0; i < parseInt(side); i++) {
-                let randomChairNumber = getRandomNumber(0, parseInt(side)) + 1;
+            randomChairsIdArray = [];
+            
+            while (randomChairsIdArray.length < num) {
+                let randomChairNumber = getRandomNumber(0, num);
 
-
-                if (leftSectionArray.includes(randomChairNumber)) {
+                if (randomChairsIdArray.includes(randomChairNumber)) {
                 } else {
-                    leftSectionArray.push(randomChairNumber)
+                    randomChairsIdArray.push(randomChairNumber)
                 }
             }
-            let modifiedLeftSectionArray = leftSectionArray.map(function(element){return `leftSection${element}`})
-            console.log(modifiedLeftSectionArray)
-            //modifiedLeftSectionArray.map(function (element) {console.log(document.querySelector(element))})
-            for (var i = 0; i < modifiedLeftSectionArray.length; i++) {
-                console.log(document.querySelector(modifiedLeftSectionArray[i]))
+
+            
+
+            for (var i = 0; i < randomChairsIdArray.length; i++) {
+                let randomNum = getRandomNumber(0, 3);
+
+                if (randomNum == 0) { // left section
+                    randomChairElementsArray.push(`leftSection${randomChairsIdArray[i]}`)
+                } else if (randomNum == 1) {
+                    randomChairElementsArray.push(`middleSection${randomChairsIdArray[i]}`)
+                } else if (randomNum == 2) {
+                    randomChairElementsArray.push(`rightSection${randomChairsIdArray[i]}`)
+                }
+                
             }
+           
+            
+
+            
+            
         } else if (chairs.numberOfRandomChairs % 2 == 0) { // even
 
         }
@@ -128,7 +143,17 @@ document.querySelector("form").addEventListener("submit", (e) => {
 
 
 })
-array = [1]
-console.log(document.querySelector('leftSection1'))
+
 
 window.onload = chairs.add(chairs.number);
+
+function addingColourToTheSelectedChairs() {
+    for (var i = 0; i < randomChairElementsArray.length; i++) {
+        let lmao = document.querySelector(`#${randomChairElementsArray[i]}`);
+        lmao.classList.toggle("occupied")
+    }
+}
+
+console.log(randomChairElementsArray)
+
+addingColourToTheSelectedChairs()
