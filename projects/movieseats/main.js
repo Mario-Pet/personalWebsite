@@ -7,7 +7,7 @@ const randomChairElementsArray = []
 
 const chairs = {
     number: 48,
-    numberOfRandomChairs: 21,
+    numberOfRandomChairs: 11,
     add(num) {
 
     if (num % 2 == "1") {
@@ -150,7 +150,7 @@ window.onload = chairs.add(chairs.number);
 function addingColourToTheSelectedChairs() {
     for (var i = 0; i < randomChairElementsArray.length; i++) {
         let lmao = document.querySelector(`#${randomChairElementsArray[i]}`);
-        lmao.classList.toggle("occupied")
+        lmao.classList.replace("unoccupied", "occupied")
     }
 }
 
