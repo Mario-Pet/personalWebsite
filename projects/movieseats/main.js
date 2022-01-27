@@ -6,81 +6,83 @@ const chairsPreOccupied = getRandomNumber(10, 35);
 const randomChairElementsArray = []
 
 const chairs = {
-    number: 48,
+    number: 61,
     numberOfRandomChairs: 11,
     add(num) {
+        let remainder = num % 2;
+        let sideCount = num / 4;
+        let centerCount = num / 2;
+        let sideRemainder = (sideCount - parseInt(sideCount)) * 2;
+        let centerRemainder = (centerCount - parseInt(centerCount));
+        console.log(`sideCount${sideCount}`)
+        console.log(`centerCount${centerCount}`)
+        console.log(`sideRemainder${sideRemainder}`)
+        console.log(`centerRemainder${centerRemainder}`)
+        console.log(`remainder ${remainder}`)
 
-    if (num % 2 == "1") {
-        side = num / 4;
-        center = num / 2;
+        if (remainder == 1) {
+            console.log("odd")
+            for (var i = 0; i < sideCount - 1; i++) {
+                let imgUnoccupied = document.createElement("img");
+                imgUnoccupied.setAttribute("class", "chair unoccupied");
+                imgUnoccupied.setAttribute("id", `leftSection${i}`)
+                document.querySelector("#leftSection").append(imgUnoccupied)
+            }
+    
+            for (var i = 0; i < centerCount - 1; i++) {
+                let imgUnoccupied = document.createElement("img");
+                imgUnoccupied.setAttribute("class", "chair unoccupied");
+                imgUnoccupied.setAttribute("id", `middleSection${i}`)
+                document.querySelector("#middleSection").append(imgUnoccupied)
+            }
+    
+            for (var i = 0; i < sideCount - 1; i++) {
+                let imgUnoccupied = document.createElement("img");
+                imgUnoccupied.setAttribute("class", "chair unoccupied");
+                imgUnoccupied.setAttribute("id", `rightSection${i}`)
+                document.querySelector("#rightSection").append(imgUnoccupied)
+            }
 
-        sideRemainder = (side - parseInt(side))*2;
-        centerRemainder = center-parseInt(center);
+            let leftOverChair = getRandomNumber(0, 3);
+            let imgUnoccupied = document.createElement("img");
+            imgUnoccupied.setAttribute("class", "chair unoccupied");
 
+            if (leftOverChair == 0) {
+                document.querySelector("#leftSection").append(imgUnoccupied)
+                imgUnoccupied.id = `leftSection${sideCount+1}`
+            } else if (leftOverChair == 1) {
+                document.querySelector("#middleSection").append(imgUnoccupied)
+                imgUnoccupied.id = `middleCenter${centerCount+1}`
+            } else if (leftOverChair == 2) {
+                document.querySelector("#leftSection").append(imgUnoccupied)
+                imgUnoccupied.id = `leftSection${sideCount+1}`
+            }
+
+        } else if (remainder == 0) {
+            console.log("even")
+            for (var i = 0; i < sideCount; i++) {
+                let imgUnoccupied = document.createElement("img");
+                imgUnoccupied.setAttribute("class", "chair unoccupied");
+                imgUnoccupied.setAttribute("id", `leftSection${i}`)
+                document.querySelector("#leftSection").append(imgUnoccupied)
+            }
         
-        for (var i = 0; i < side - 1; i++) {
-            let imgUnoccupied = document.createElement("img");
-            imgUnoccupied.setAttribute("class", "chair unoccupied");
-            imgUnoccupied.setAttribute("id", `leftSection${i+1}`)
-            document.querySelector("#leftSection").append(imgUnoccupied)
-        }
-
-        for (var i = 0; i < center - 1; i++) {
-            let imgUnoccupied = document.createElement("img");
-            imgUnoccupied.setAttribute("class", "chair unoccupied");
-            imgUnoccupied.setAttribute("id", `middleSection${i+1}`)
-            document.querySelector("#middleSection").append(imgUnoccupied)
-        }
-
-        for (var i = 0; i < side - 1; i++) {
-            let imgUnoccupied = document.createElement("img");
-            imgUnoccupied.setAttribute("class", "chair unoccupied");
-            imgUnoccupied.setAttribute("id", `rightSection${i+1}`)
-            document.querySelector("#rightSection").append(imgUnoccupied)
-        }
+            for (var i = 0; i < centerCount; i++) {
+                let imgUnoccupied = document.createElement("img");
+                imgUnoccupied.setAttribute("class", "chair unoccupied");
+                imgUnoccupied.setAttribute("id", `middleSection${i}`)
+                document.querySelector("#middleSection").append(imgUnoccupied)
+                }
         
-        let leftOverChair = getRandomNumber(0, 3);
-        let imgUnoccupied = document.createElement("img");
-        imgUnoccupied.setAttribute("class", "chair unoccupied");
+            for (var i = 0; i < sideCount; i++) {
+                let imgUnoccupied = document.createElement("img");
+                imgUnoccupied.setAttribute("class", "chair unoccupied");
+                imgUnoccupied.setAttribute("id", `rightSection${i}`)
+                document.querySelector("#rightSection").append(imgUnoccupied)
+                }
 
-        if (leftOverChair == 0) {
-            document.querySelector("#leftSection").append(imgUnoccupied)
-            imgUnoccupied.id = `leftSection${side+1}`
-        } else if (leftOverChair == 1) {
-            document.querySelector("#middleSection").append(imgUnoccupied)
-            imgUnoccupied.id = `middleCenter${center+1}`
-        } else if (leftOverChair == 2) {
-            document.querySelector("#leftSection").append(imgUnoccupied)
-            imgUnoccupied.id = `leftSection${side+1}`
         }
-
-    } else {
-
-        side = num / 4;
-        center = num / 2;
-
-        for (var i = 0; i < side; i++) {
-            let imgUnoccupied = document.createElement("img");
-            imgUnoccupied.setAttribute("class", "chair unoccupied");
-            imgUnoccupied.setAttribute("id", `leftSection${i}`)
-            document.querySelector("#leftSection").append(imgUnoccupied)
-        }
-
-        for (var i = 0; i < center; i++) {
-            let imgUnoccupied = document.createElement("img");
-            imgUnoccupied.setAttribute("class", "chair unoccupied");
-            imgUnoccupied.setAttribute("id", `middleSection${i}`)
-            document.querySelector("#middleSection").append(imgUnoccupied)
-        }
-
-        for (var i = 0; i < side; i++) {
-            let imgUnoccupied = document.createElement("img");
-            imgUnoccupied.setAttribute("class", "chair unoccupied");
-            imgUnoccupied.setAttribute("id", `rightSection${i}`)
-            document.querySelector("#rightSection").append(imgUnoccupied)
-        }
-        
-        }
+   
     }, 
     randomChairSelector(num) { 
         
@@ -90,7 +92,6 @@ const chairs = {
             sideRemainder = (side - parseInt(side))*2;
             centerRemainder = center-parseInt(center);
 
-            let leftSectionElement = document.querySelector("#leftSection");
             randomChairsIdArray = [];
             
             while (randomChairsIdArray.length < num) {
@@ -146,10 +147,11 @@ document.querySelector("form").addEventListener("submit", (e) => {
 
 
 window.onload = chairs.add(chairs.number);
-
+console.log(randomChairElementsArray)
 function addingColourToTheSelectedChairs() {
     for (var i = 0; i < randomChairElementsArray.length; i++) {
         let lmao = document.querySelector(`#${randomChairElementsArray[i]}`);
+        console.log(lmao)
         lmao.classList.replace("unoccupied", "occupied")
     }
 }
