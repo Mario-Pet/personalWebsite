@@ -162,27 +162,36 @@ const chairs = {
             } // function
 
             const oddSideAdder = () => {
-                const coinFlip = randomNumber(0, 3);
-
-                
-
+                for (let i = 0; i < chairsToBeAdded; i++) {
+                    let valueOfRandom = randomNumber(0, 3);
+                    
+                    if (valueOfRandom == 0) { 
+                        
+                    }
+                } // for  
             }
 
+
             const IDs = [...leftSideAdder(), ...rightSideAdder(), ...centerSideAdder()]
-            console.log(IDs)
+            
             leftSideAdder()
             rightSideAdder()
             centerSideAdder()
+            console.log(IDs)
+            console.log(oddChairsToBeAdded)
+            return IDs;
+        } // sideIdentifier
 
-        }
+        console.log(sideIdentifer())
         chanceCalculator()
         sideIdentifer(this.numberOfRandomChairs)
+
     } // sideIdentifier
 
 
 } // chair object
 
-chairs.add(160)
+chairs.add(9)
 chairs.randomChairSelector()
 console.log(`numberOfRandomChairs = ${chairs.numberOfRandomChairs} `)
 
