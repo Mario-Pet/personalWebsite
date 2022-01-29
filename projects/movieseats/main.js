@@ -187,28 +187,46 @@ const chairs = {
             
             const IDs = [...leftSideArray, ...centerSideArray, ...rightSideArray].sort()
             IDs.push(...oddSideAdder())
-            
+
+
+
+
+
+
+
+            // execution
             leftSideAdder()
             rightSideAdder()
             centerSideAdder()
             oddSideAdder()
             console.log(`oddChairsToBeAdded = ${oddChairsToBeAdded}`)
-            console.log(IDs)
             return IDs;
         } // sideIdentifier
 
+        
+        
 
         chanceCalculator()
-        sideIdentifer(this.numberOfRandomChairs)
+        let processedIds = sideIdentifer(this.numberOfRandomChairs);
+        
+        const applier = ids => {
+            ids.forEach(element => {
+                document.querySelector(`#${element}`).classList.replace("unoccupied", "occupied")
+            })
+        }
 
-    } // sideIdentifier
+        applier(processedIds)
 
+
+    } // add
+
+    
 
 } // chair object
 
-chairs.add(10)
+chairs.add(160)
 chairs.randomChairSelector()
-console.log(`numberOfRandomChairs = ${chairs.numberOfRandomChairs} `)
+console.log(`numberOfRandomChairs = ${chairs.numberOfRandomChairs}`)
 
 
 
@@ -242,3 +260,7 @@ const email = {
     send() {}
 }
 
+document.querySelector(".chairSelection").addEventListener("click", (e) => {
+    if (e.target.classList.contains("selected")) {e.target.classList.replace("selected", "unoccupied")}
+    else {e.target.classList.replace("unoccupied", "selected")}
+})
