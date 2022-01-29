@@ -6,24 +6,136 @@ const chairs = {
     numberOfChairs: 0,
     numberOfRandomChairs: 0,
     add(num) {
-        const oddOrEven = () => {
+        const oddOrEven = (num) => {
+            return num % 2 == 1 ? "odd" : "even";
+        } // even function
 
-        }
+        const pickASide = (oddOrEven, num) => {
+            let chairsToBeAdded = num - (parseInt(num / 4) + parseInt(num / 4) + parseInt(num / 2));
 
-        const leftSide = () => {
+            for (let i = 0; i < chairsToBeAdded; i++) {
+                let valueOfRandom = randomNumber(0, 3);
+                if (valueOfRandom == 0) { // left section
+                    let imgUnoccupied = document.createElement("img");
+                    imgUnoccupied.setAttribute("class", "chair unoccupied");
+                    imgUnoccupied.setAttribute("id", `A${leftSide.numberOfChairs}`)
+                    document.querySelector("#leftSection").append(imgUnoccupied)
+                } else if(valueOfRandom == 1) { // center
+                    let imgUnoccupied = document.createElement("img");
+                    imgUnoccupied.setAttribute("class", "chair unoccupied");
+                    imgUnoccupied.setAttribute("id", `B${centerSide.numberOfChairs}`)
+                    document.querySelector("#centerSection").append(imgUnoccupied)
+                } else if(valueOfRandom == 2) {
+                    let imgUnoccupied = document.createElement("img");
+                    imgUnoccupied.setAttribute("class", "chair unoccupied");
+                    imgUnoccupied.setAttribute("id", `C${rightSide.numberOfChairs}`)
+                    document.querySelector("#rightSection").append(imgUnoccupied)
+                } // if statement
+            } // for    
+        } // pickASide function
 
-        }
+        const leftSide = {
+            numberOfChairsLeft: 0,
+            add(num) {
+                this.numberOfChairsLeft += parseInt(num / 4);
 
-        const middleSide = () => {
-            
-        }
+                for(let i = 0; i < this.numberOfChairsLeft; i++) {
+                    let imgUnoccupied = document.createElement("img");
+                    imgUnoccupied.setAttribute("class", "chair unoccupied");
+                    imgUnoccupied.setAttribute("id", `A${i}`)
+                    document.querySelector("#leftSection").append(imgUnoccupied)
+                } // for
+                chairs.numberOfChairs += this.numberOfChairsLeft // adding to the main chair property
+            } // add method 
+        } // leftSide object
 
-        const rightSide = () => {
-            
-        }
+        const centerSide = {
+            numberOfChairsCenter: 0,
+            add(num) {
+                this.numberOfChairsCenter += parseInt(num / 2);
+
+                for(let i = 0; i < this.numberOfChairsCenter; i++) {
+                    let imgUnoccupied = document.createElement("img");
+                    imgUnoccupied.setAttribute("class", "chair unoccupied");
+                    imgUnoccupied.setAttribute("id", `B${i}`)
+                    document.querySelector("#centerSection").append(imgUnoccupied)
+                } // for
+                chairs.numberOfChairs += this.numberOfChairsCenter // adding to the main chair property
+            } // add method
+        } // centerSide object
+        
+        const rightSide = {
+            numberOfChairsRight: 0,
+            add(num) {
+                this.numberOfChairsRight += parseInt(num / 4);
+                for(let i = 0; i < this.numberOfChairsRight; i++) {
+                    let imgUnoccupied = document.createElement("img");
+                    imgUnoccupied.setAttribute("class", "chair unoccupied");
+                    imgUnoccupied.setAttribute("id", `C${i}`)
+                    document.querySelector("#rightSection").append(imgUnoccupied)
+                } // for
+                chairs.numberOfChairs += this.numberOfChairsRight // adding to the main chair property
+            } // add method
+        } // rightSide object
+
+        
+        // execution
+        leftSide.add(num)
+        rightSide.add(num)
+        centerSide.add(num)
+        pickASide(oddOrEven(), num)
+        
     },
-    randomChairSelector() {}
-}
+    randomChairSelector() {
+        
+        const chanceCalculator = () => {
+            // flips a coin to either fill 20% or 40% or 60% of the chairs
+            const randomNum = randomNumber(0, 3);
+            
+            if (randomNum == 0) {this.numberOfRandomChairs = Math.round(this.numberOfChairs * 0.2);} // 20%
+            else if(randomNum == 1) {this.numberOfRandomChairs = Math.round(this.numberOfChairs * 0.4);} // 40%
+            else if (randomNum == 2) {this.numberOfRandomChairs = Math.round(this.numberOfChairs * 0.6);} // 60%
+        }
+
+        const sideIdentifer = () => {
+            let leftSideChairs = parseInt(this.numberOfRandomChairs / 4)
+            let centerSideChairs = parseInt(this.numberOfRandomChairs / 2)
+            let rightSideChairs = parseInt(this.numberOfRandomChairs / 4)
+            let oddChairsToBeAdded = this.numberOfRandomChairs - (leftSideChairs + centerSideChairs + rightSideChairs); 
+            console.log(oddChairsToBeAdded)
+        }
+
+        chanceCalculator()
+        sideIdentifer()
+    }
+
+
+} // chair object
+
+chairs.add(42)
+chairs.randomChairSelector()
+console.log(`numberOfRandomChairs = ${chairs.numberOfRandomChairs} `)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 const sentenceManipulator = {
     chairs: [],
@@ -35,3 +147,4 @@ const email = {
     looks() {},
     send() {}
 }
+
