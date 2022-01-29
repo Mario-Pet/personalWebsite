@@ -102,7 +102,7 @@ const chairs = {
         const chanceCalculator = () => {
             // flips a coin to either fill 20% or 40% or 60% of the chairs
             const randomNum = randomNumber(0, 3);
-            
+           
             if (randomNum == 0) {this.numberOfRandomChairs = Math.round(this.numberOfChairs * 0.2);} // 20%
             else if(randomNum == 1) {this.numberOfRandomChairs = Math.round(this.numberOfChairs * 0.4);} // 40%
             else if (randomNum == 2) {this.numberOfRandomChairs = Math.round(this.numberOfChairs * 0.6);} // 60%
@@ -115,14 +115,18 @@ const chairs = {
 
             const oddChairsToBeAdded = this.numberOfRandomChairs - (leftSideChairs + centerSideChairs + rightSideChairs);
 
+            let leftSideArray = leftSideAdder();
+            let centerSideArray = centerSideAdder();
+            let rightSideArray = rightSideAdder();
+
             
-            const leftSideAdder = () => {
+            function leftSideAdder() {
                 let leftIds = [];
 
                 while (leftIds.length < leftSideChairs) {
                     let n = randomNumber(0, leftSideChairs);
     
-                    if (leftIds.includes(n)) {
+                    if (leftIds.includes(`A${n}`)) {
                     } else {
                         leftIds.push(`A${n}`)
                     } // if 
@@ -131,13 +135,13 @@ const chairs = {
                 return leftIds;
             } // function
 
-            const centerSideAdder = () => {
+            function centerSideAdder() {
                 let centerIds = [];
 
                 while (centerIds.length < centerSideChairs) {
                     let n = randomNumber(0, centerSideChairs);
     
-                    if (centerIds.includes(n)) {
+                    if (centerIds.includes(`B${n}`)) {
                     } else {
                         centerIds.push(`B${n}`)
                     } // if 
@@ -146,13 +150,13 @@ const chairs = {
                 return centerIds;
             } // function
 
-            const rightSideAdder = () => {
+            function rightSideAdder() {
                 let rightIds = [];
 
                 while (rightIds.length < rightSideChairs) {
                     let n = randomNumber(0, rightSideChairs);
     
-                    if (rightIds.includes(n)) {
+                    if (rightIds.includes(`C${n}`)) {
                     } else {
                         rightIds.push(`C${n}`)
                     } // if 
@@ -162,27 +166,38 @@ const chairs = {
             } // function
 
             const oddSideAdder = () => {
-                for (let i = 0; i < chairsToBeAdded; i++) {
+                let newValues = [];
+                for (let i = 0; i < oddChairsToBeAdded; i++) {
                     let valueOfRandom = randomNumber(0, 3);
-                    
-                    if (valueOfRandom == 0) { 
-                        
+
+                    if (valueOfRandom == 0) { // left
+                        newValues.push(`A${leftSideArray.length}`)
+                        leftSideArray.push(`A${leftSideArray.length}`)
+                    } else if(valueOfRandom == 1) { // center
+                        newValues.push(`B${centerSideArray.length}`)
+                        centerSideArray.push(`B${centerSideArray.length}`)
+                    } else if (valueOfRandom == 2) {
+                        newValues.push(`C${rightSideArray.length}`)
+                        rightSideArray.push(`C${rightSideArray.length}`)
                     }
+                    
                 } // for  
+               return newValues;
             }
-
-
-            const IDs = [...leftSideAdder(), ...rightSideAdder(), ...centerSideAdder()]
+            
+            const IDs = [...leftSideArray, ...centerSideArray, ...rightSideArray].sort()
+            IDs.push(...oddSideAdder())
             
             leftSideAdder()
             rightSideAdder()
             centerSideAdder()
+            oddSideAdder()
+            console.log(`oddChairsToBeAdded = ${oddChairsToBeAdded}`)
             console.log(IDs)
-            console.log(oddChairsToBeAdded)
             return IDs;
         } // sideIdentifier
 
-        console.log(sideIdentifer())
+
         chanceCalculator()
         sideIdentifer(this.numberOfRandomChairs)
 
@@ -191,7 +206,7 @@ const chairs = {
 
 } // chair object
 
-chairs.add(9)
+chairs.add(10)
 chairs.randomChairSelector()
 console.log(`numberOfRandomChairs = ${chairs.numberOfRandomChairs} `)
 
