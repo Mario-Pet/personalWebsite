@@ -202,6 +202,7 @@ const chairs = {
     } // add
 } // chair object
 
+// Manipulating the sentence -- Made it an object for future proofing 
 const sentenceManipulator = {
     calculate(value) {
         let priceOfAllChairsSelected = document.querySelector("#priceOfAllChairsSelected")
@@ -212,9 +213,8 @@ const sentenceManipulator = {
     }
 }
 
+// Calculating the data in the cells of the table
 const calculateReceipt = (movie, seats, price) => {
-    console.log(`${movie}, ${seats}, ${price}`)
-
     document.querySelector("#movieRunning").textContent = document.querySelector("#movieSelector").value
     document.querySelector("#chairsOccupied").textContent = chairs.positions;
     document.querySelector("#priceOfChairsOccupied").textContent = chairs.priceOfAllChairsSelected;
@@ -237,8 +237,8 @@ document.querySelector("#movieSelector").addEventListener("change", (e) => {
     calculateReceipt(document.querySelector("#movieSelector").value, chairs.positions, sentenceManipulator.price)
 } )
 
+// Event listener for display button pressed
 document.querySelector("#submit").addEventListener("click", (e) => {
-
     document.querySelector("#table").classList.toggle("notDisplayed")
     calculateReceipt(document.querySelector("#movieSelector").value, chairs.positions, sentenceManipulator.price)
 })

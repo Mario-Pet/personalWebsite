@@ -64,10 +64,6 @@ select {
   font-weight: 700;
 }
 
-option {
-  text-align: center;
-}
-
 .info {
   background-color: var(--lighterDark);
 
