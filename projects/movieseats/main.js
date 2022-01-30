@@ -13,10 +13,11 @@ const chairs = {
         const pickASide = (oddOrEven, num) => {
             let chairsToBeAdded = num - (parseInt(num / 4) + parseInt(num / 4) + parseInt(num / 2));
 
-            const makingAChair = (idSide, side) => {
+            const makingAChair = (idLetter, idSide, side) => {
                 let imgUnoccupied = document.createElement("img");
                 imgUnoccupied.setAttribute("class", "chair unoccupied");
-                imgUnoccupied.setAttribute("id", `A${idSide}`)
+                imgUnoccupied.setAttribute("id", `${idLetter}${idSide}`)
+                imgUnoccupied.setAttribute("name", "chair")
                 document.querySelector(`#${side}`).append(imgUnoccupied)
             }
 
@@ -24,11 +25,11 @@ const chairs = {
                 let valueOfRandom = randomNumber(0, 3);
 
                 if (valueOfRandom == 0) { // left section
-                    makingAChair(leftSide.numberOfChairs, "leftSection")
+                    makingAChair("A", leftSide.numberOfChairs, "leftSection")
                 } else if(valueOfRandom == 1) { // center section
-                    makingAChair(centerSide.numberOfChairs, "centerSection")
+                    makingAChair("B", centerSide.numberOfChairs, "centerSection")
                 } else if(valueOfRandom == 2) { // right section
-                    makingAChair(rightSide.numberOfChairs, "rightSection")
+                    makingAChair("C", rightSide.numberOfChairs, "rightSection")
                 } // if statement
             } // for    
         } // pickASide function
@@ -42,6 +43,7 @@ const chairs = {
                     let imgUnoccupied = document.createElement("img");
                     imgUnoccupied.setAttribute("class", "chair unoccupied");
                     imgUnoccupied.setAttribute("id", `A${i}`)
+                    imgUnoccupied.setAttribute("name", "chair")
                     document.querySelector("#leftSection").append(imgUnoccupied)
                 } // for
                 chairs.numberOfChairs += this.numberOfChairsLeft // adding to the main chair property
@@ -57,6 +59,7 @@ const chairs = {
                     let imgUnoccupied = document.createElement("img");
                     imgUnoccupied.setAttribute("class", "chair unoccupied");
                     imgUnoccupied.setAttribute("id", `B${i}`)
+                    imgUnoccupied.setAttribute("name", "chair")
                     document.querySelector("#centerSection").append(imgUnoccupied)
                 } // for
                 chairs.numberOfChairs += this.numberOfChairsCenter // adding to the main chair property
@@ -71,6 +74,7 @@ const chairs = {
                     let imgUnoccupied = document.createElement("img");
                     imgUnoccupied.setAttribute("class", "chair unoccupied");
                     imgUnoccupied.setAttribute("id", `C${i}`)
+                    imgUnoccupied.setAttribute("name", "chair")
                     document.querySelector("#rightSection").append(imgUnoccupied)
                 } // for
                 chairs.numberOfChairs += this.numberOfChairsRight // adding to the main chair property
@@ -200,27 +204,6 @@ chairs.add(140)
 chairs.randomChairSelector()
 console.log(`numberOfRandomChairs = ${chairs.numberOfRandomChairs}`)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const sentenceManipulator = {
     chairs: [],
     price: 0
@@ -232,7 +215,8 @@ const email = {
     send() {}
 }
 
-document.querySelector(".chairSelection").addEventListener("click", (e) => {
-    if (e.target.classList.contains("selected")) {e.target.classList.replace("selected", "unoccupied")}
-    else {e.target.classList.replace("unoccupied", "selected")}
+// Event listener for selection of chairs
+document.querySelector(".chairSelection").addEventListener("click", (e) => { 
+    if (e.target.classList.contains("selected") && e.target.name == "chair") {e.target.classList.replace("selected", "unoccupied"); sentenceManipulator.chairs.splice(sentenceManipulator.chairs.indexOf(e.target.id), 1) }
+    else if (e.target.name == "chair"){e.target.classList.replace("unoccupied", "selected"); sentenceManipulator.chairs.push(e.target.id);}  
 })
