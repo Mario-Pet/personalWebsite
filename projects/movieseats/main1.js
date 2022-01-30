@@ -142,7 +142,6 @@ document.querySelector(".chairSelection").addEventListener("click", (e) => {
 document.querySelector("form").addEventListener("submit", (e) => {
     e.preventDefault();
 
-
 })
 
 

@@ -5,6 +5,7 @@ const randomNumber = (min, max) => {
 const chairs = {
     numberOfChairs: 0,
     numberOfRandomChairs: 0,
+    positions: [],
     add(num) {
         const oddOrEven = (num) => {
             return num % 2 == 1 ? "odd" : "even";
@@ -182,7 +183,7 @@ const chairs = {
             rightSideAdder()
             centerSideAdder()
             oddSideAdder()
-            console.log(`oddChairsToBeAdded = ${oddChairsToBeAdded}`)
+            
             return IDs;
         } // sideIdentifier
 
@@ -202,11 +203,17 @@ const chairs = {
 
 chairs.add(140)
 chairs.randomChairSelector()
-console.log(`numberOfRandomChairs = ${chairs.numberOfRandomChairs}`)
 
 const sentenceManipulator = {
     chairs: [],
-    price: 0
+    price: 0,
+    calculate(value) {
+        let priceOfAllChairsSelected = document.querySelector("#priceOfAllChairsSelected")
+       
+        if (value == "Zack Snyder's Justice League - 16€") {priceOfAllChairsSelected.textContent = chairs.positions.length * 16;}
+        else if(value == "Spider-Man: No way Home - 19€") {priceOfAllChairsSelected.textContent = chairs.positions.length * 19; }
+        else if(value == "The Suice Squad - 18€") {priceOfAllChairsSelected.textContent = chairs.positions.length * 18;}
+    }
 }
 
 const email = {
@@ -217,6 +224,16 @@ const email = {
 
 // Event listener for selection of chairs
 document.querySelector(".chairSelection").addEventListener("click", (e) => { 
-    if (e.target.classList.contains("selected") && e.target.name == "chair") {e.target.classList.replace("selected", "unoccupied"); sentenceManipulator.chairs.splice(sentenceManipulator.chairs.indexOf(e.target.id), 1) }
-    else if (e.target.name == "chair"){e.target.classList.replace("unoccupied", "selected"); sentenceManipulator.chairs.push(e.target.id);}  
+    if (e.target.classList.contains("selected") && e.target.name == "chair") {e.target.classList.replace("selected", "unoccupied"); chairs.positions.splice(chairs.positions.indexOf(e.target.id), 1) }
+    else if (!e.target.classList.contains("occupied")&& e.target.name == "chair"){e.target.classList.replace("unoccupied", "selected"); chairs.positions.push(e.target.id);}
+    
+    let chairsSelected = document.querySelector("#chairsSelected")
+    chairsSelected.textContent = chairs.positions.length;
+    sentenceManipulator.calculate(document.querySelector("#movieSelector").value)
 })
+
+// Event listener for change of movie
+document.querySelector("#movieSelector").addEventListener("change", (e) => {
+    sentenceManipulator.calculate(e.target.value)
+} )
+
