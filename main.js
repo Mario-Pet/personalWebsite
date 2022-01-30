@@ -1,8 +1,3 @@
-const currentLanguage = "german";
-
-const languageChanger = currentLanguage => {
-
-}
 
 document.querySelector("#language").addEventListener("change", (e) => {
     if(document.querySelector("#language").value == "german") {
@@ -20,15 +15,3 @@ document.querySelector("#language").addEventListener("change", (e) => {
     }
 })
 
-{/* <div class="content">
-    <div id="mainWrapper">
-        <span id="underConstructionSentence">This website is currently under construction.</span>
-        <span id="returnSentence">Please return in the near future.</span>
-        <br>
-        <span id="myProjectsSentence">My projects are represented in the top right of the page.</span>
-    </div>
-    
-    <div id="secondWrapper">
-        <span id="contactSentence">contact me at: hey@mariopetkovic.com</span><br>
-        <span>maki</span>
-    </div> */}

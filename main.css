@@ -28,19 +28,19 @@ body {
 #mainWrapper > span {
   color: var(--purple);
   text-align: center;
-  font-size: 10px;
+  font-size: 12px;
 }
 
 #secondWrapper > span {
   color: var(--purple);
   text-align: center;
-  font-size: 10px;
+  font-size: 12px;
   display: flex;
   flex-direction: column;
 }
 
 a {
-  font-size: 10px;
+  font-size: 12px;
   color: var(--purple);
   display: flex;
   justify-content: flex-end;

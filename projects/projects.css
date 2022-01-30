@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap");
-
+* {
+  font-family: "Roboto Mono", monospace;
+}
 :root {
   --purple: #9d5dea;
   --lightPurple: #b691e3;
@@ -8,7 +10,6 @@
 
 body {
   background-color: var(--dark);
-  font-family: "Roboto Mono", monospace;
 }
 
 a {
@@ -32,4 +33,17 @@ section {
 .source {
   color: var(--purple);
   font-size: 10px;
+}
+
+select {
+  float: left;
+
+  border: none;
+  color: var(--purple);
+  background-color: var(--dark);
+}
+
+.description {
+  color: var(--purple);
+  font-size: 12px;
 }
