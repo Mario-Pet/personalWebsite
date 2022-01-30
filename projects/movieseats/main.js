@@ -13,23 +13,22 @@ const chairs = {
         const pickASide = (oddOrEven, num) => {
             let chairsToBeAdded = num - (parseInt(num / 4) + parseInt(num / 4) + parseInt(num / 2));
 
+            const makingAChair = (idSide, side) => {
+                let imgUnoccupied = document.createElement("img");
+                imgUnoccupied.setAttribute("class", "chair unoccupied");
+                imgUnoccupied.setAttribute("id", `A${idSide}`)
+                document.querySelector(`#${side}`).append(imgUnoccupied)
+            }
+
             for (let i = 0; i < chairsToBeAdded; i++) {
                 let valueOfRandom = randomNumber(0, 3);
+
                 if (valueOfRandom == 0) { // left section
-                    let imgUnoccupied = document.createElement("img");
-                    imgUnoccupied.setAttribute("class", "chair unoccupied");
-                    imgUnoccupied.setAttribute("id", `A${leftSide.numberOfChairs}`)
-                    document.querySelector("#leftSection").append(imgUnoccupied)
-                } else if(valueOfRandom == 1) { // center
-                    let imgUnoccupied = document.createElement("img");
-                    imgUnoccupied.setAttribute("class", "chair unoccupied");
-                    imgUnoccupied.setAttribute("id", `B${centerSide.numberOfChairs}`)
-                    document.querySelector("#centerSection").append(imgUnoccupied)
-                } else if(valueOfRandom == 2) {
-                    let imgUnoccupied = document.createElement("img");
-                    imgUnoccupied.setAttribute("class", "chair unoccupied");
-                    imgUnoccupied.setAttribute("id", `C${rightSide.numberOfChairs}`)
-                    document.querySelector("#rightSection").append(imgUnoccupied)
+                    makingAChair(leftSide.numberOfChairs, "leftSection")
+                } else if(valueOfRandom == 1) { // center section
+                    makingAChair(centerSide.numberOfChairs, "centerSection")
+                } else if(valueOfRandom == 2) { // right section
+                    makingAChair(rightSide.numberOfChairs, "rightSection")
                 } // if statement
             } // for    
         } // pickASide function
@@ -78,7 +77,6 @@ const chairs = {
             } // add method
         } // rightSide object
 
-        
         // execution
         leftSide.add(num)
         rightSide.add(num)
@@ -87,20 +85,10 @@ const chairs = {
         
     },
 
-
-
-
-
-
-
-
-
-
-
     randomChairSelector() {
         
         const chanceCalculator = () => {
-            // flips a coin to either fill 20% or 40% or 60% of the chairs
+            // flips a (triple???)coin to either fill 20% or 40% or 60% of the chairs
             const randomNum = randomNumber(0, 3);
            
             if (randomNum == 0) {this.numberOfRandomChairs = Math.round(this.numberOfChairs * 0.2);} // 20%
@@ -119,12 +107,11 @@ const chairs = {
             let centerSideArray = centerSideAdder();
             let rightSideArray = rightSideAdder();
 
-            
             function leftSideAdder() {
                 let leftIds = [];
 
                 while (leftIds.length < leftSideChairs) {
-                    let n = randomNumber(0, leftSideChairs);
+                    let n = randomNumber(0, parseInt(chairs.numberOfChairs/4));
     
                     if (leftIds.includes(`A${n}`)) {
                     } else {
@@ -139,7 +126,7 @@ const chairs = {
                 let centerIds = [];
 
                 while (centerIds.length < centerSideChairs) {
-                    let n = randomNumber(0, centerSideChairs);
+                    let n = randomNumber(0, parseInt(chairs.numberOfChairs/2));
     
                     if (centerIds.includes(`B${n}`)) {
                     } else {
@@ -154,7 +141,7 @@ const chairs = {
                 let rightIds = [];
 
                 while (rightIds.length < rightSideChairs) {
-                    let n = randomNumber(0, rightSideChairs);
+                    let n = randomNumber(0, parseInt(chairs.numberOfChairs/4));
     
                     if (rightIds.includes(`C${n}`)) {
                     } else {
@@ -179,21 +166,13 @@ const chairs = {
                     } else if (valueOfRandom == 2) {
                         newValues.push(`C${rightSideArray.length}`)
                         rightSideArray.push(`C${rightSideArray.length}`)
-                    }
-                    
+                    } // if 
                 } // for  
                return newValues;
-            }
+            } // oddSideAdder
             
-            const IDs = [...leftSideArray, ...centerSideArray, ...rightSideArray].sort()
-            IDs.push(...oddSideAdder())
-
-
-
-
-
-
-
+            const IDs = [...leftSideArray, ...centerSideArray, ...rightSideArray, ...oddSideAdder()].sort()
+            
             // execution
             leftSideAdder()
             rightSideAdder()
@@ -203,12 +182,10 @@ const chairs = {
             return IDs;
         } // sideIdentifier
 
-        
-        
+        chanceCalculator() // deciding how many chairs are going to be random
 
-        chanceCalculator()
         let processedIds = sideIdentifer(this.numberOfRandomChairs);
-        
+
         const applier = ids => {
             ids.forEach(element => {
                 document.querySelector(`#${element}`).classList.replace("unoccupied", "occupied")
@@ -216,15 +193,10 @@ const chairs = {
         }
 
         applier(processedIds)
-
-
     } // add
-
-    
-
 } // chair object
 
-chairs.add(160)
+chairs.add(140)
 chairs.randomChairSelector()
 console.log(`numberOfRandomChairs = ${chairs.numberOfRandomChairs}`)
 
