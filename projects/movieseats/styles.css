@@ -53,12 +53,19 @@ select {
 
   margin-bottom: 20px;
 
+  width: 300px;
+  text-align: center;
+
   color: var(--purple);
   background-color: var(--dark);
 
   border: none;
 
   font-weight: 700;
+}
+
+option {
+  text-align: center;
 }
 
 .info {
