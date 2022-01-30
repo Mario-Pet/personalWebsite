@@ -91,8 +91,7 @@ const chairs = {
         
     },
 
-    randomChairSelector() {
-        
+    randomChairSelector() {     
         const chanceCalculator = () => {
             // flips a (triple???)coin to either fill 20% or 40% or 60% of the chairs
             const randomNum = randomNumber(0, 3);
