@@ -5,25 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>maki</title>
-    <script src="main.js"></script>
+    <script defer src="main.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
     <link href="main.css" rel="stylesheet">
 </head>
 <body>
-    <a id="projects" href="/projects/projects.html">projects</a>
+    <select name="language" id="language">
+        <option>german</option>
+        <option>english</option>
+    </select>
+    <a id="projects" href="/projects/projects.html">projekte</a>
     <a id="github" href="https://github.com/Mario-Pet">github</a>
+    
     <div class="content">
     <div id="mainWrapper">
-        <span>This website is currently under construction.</span>
-        <span>Please return in the near future.</span>
+        <span id="underConstructionSentence">Diese Website befindet sich derzeit im Aufbau.</span>
+        <span id="returnSentence">Bitte kommen Sie in naher Zukunft wieder.</span>
         <br>
-        <span>My projects are represented in the top right of the page.</span>
+        <span id="myProjectsSentence">Meine Projekte sind oben rechts auf der Seite zu sehen.</span>
     </div>
     
     <div id="secondWrapper">
-        <span>contact me at: hey@mariopetkovic.com</span><br>
+        <span id="contactSentence">Kontaktieren Sie mich unter: hey@mariopetkovic.com</span><br>
         <span>maki</span>
     </div>
 </div>

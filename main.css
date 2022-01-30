@@ -1,11 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap");
-
+* {
+  font-family: "Roboto Mono", monospace;
+}
 :root {
   --purple: #9d5dea;
+  --dark: #242326;
+  --lightPurple: #b691e3;
 }
 
 body {
-  background-color: #242326;
+  background-color: var(--dark);
 }
 .content {
   display: flex;
@@ -22,14 +26,12 @@ body {
 }
 
 #mainWrapper > span {
-  font-family: "Roboto Mono", monospace;
   color: var(--purple);
   text-align: center;
   font-size: 10px;
 }
 
 #secondWrapper > span {
-  font-family: "Roboto Mono", monospace;
   color: var(--purple);
   text-align: center;
   font-size: 10px;
@@ -38,15 +40,22 @@ body {
 }
 
 a {
-  font-family: "Roboto Mono", monospace;
   font-size: 10px;
-  color: #9d5dea;
+  color: var(--purple);
   display: flex;
   justify-content: flex-end;
 }
 a:hover {
-  color: #b691e3;
+  color: var(--lightPurple);
 }
 a:link {
   text-decoration: none;
+}
+
+select {
+  float: left;
+
+  border: none;
+  color: var(--purple);
+  background-color: var(--dark);
 }
