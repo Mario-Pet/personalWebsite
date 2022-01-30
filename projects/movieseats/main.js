@@ -6,6 +6,7 @@ const chairs = {
     numberOfChairs: 0,
     numberOfRandomChairs: 0,
     positions: [],
+    priceOfAllChairsSelected: 0,
     add(num) {
         const oddOrEven = (num) => {
             return num % 2 == 1 ? "odd" : "even";
@@ -201,25 +202,22 @@ const chairs = {
     } // add
 } // chair object
 
-chairs.add(140)
-chairs.randomChairSelector()
-
 const sentenceManipulator = {
-    chairs: [],
-    price: 0,
     calculate(value) {
         let priceOfAllChairsSelected = document.querySelector("#priceOfAllChairsSelected")
        
-        if (value == "Zack Snyder's Justice League - 16€") {priceOfAllChairsSelected.textContent = chairs.positions.length * 16;}
-        else if(value == "Spider-Man: No way Home - 19€") {priceOfAllChairsSelected.textContent = chairs.positions.length * 19; }
-        else if(value == "The Suice Squad - 18€") {priceOfAllChairsSelected.textContent = chairs.positions.length * 18;}
+        if (value == "Zack Snyder's Justice League - 16€") {priceOfAllChairsSelected.textContent = chairs.positions.length * 16; chairs.priceOfAllChairsSelected = chairs.positions.length * 16;}
+        else if(value == "Spider-Man: No way Home - 19€") {priceOfAllChairsSelected.textContent = chairs.positions.length * 19; chairs.priceOfAllChairsSelected = chairs.positions.length * 19;}
+        else if(value == "The Suice Squad - 18€") {priceOfAllChairsSelected.textContent = chairs.positions.length * 18; chairs.priceOfAllChairsSelected = chairs.positions.length * 18;}
     }
 }
 
-const email = {
-    value: "hey@mariopetkovic.com",
-    looks() {},
-    send() {}
+const calculateReceipt = (movie, seats, price) => {
+    console.log(`${movie}, ${seats}, ${price}`)
+
+    document.querySelector("#movieRunning").textContent = document.querySelector("#movieSelector").value
+    document.querySelector("#chairsOccupied").textContent = chairs.positions;
+    document.querySelector("#priceOfChairsOccupied").textContent = chairs.priceOfAllChairsSelected;
 }
 
 // Event listener for selection of chairs
@@ -230,10 +228,20 @@ document.querySelector(".chairSelection").addEventListener("click", (e) => {
     let chairsSelected = document.querySelector("#chairsSelected")
     chairsSelected.textContent = chairs.positions.length;
     sentenceManipulator.calculate(document.querySelector("#movieSelector").value)
+    calculateReceipt(document.querySelector("#movieSelector").value, chairs.positions, sentenceManipulator.price)
 })
 
 // Event listener for change of movie
 document.querySelector("#movieSelector").addEventListener("change", (e) => {
     sentenceManipulator.calculate(e.target.value)
+    calculateReceipt(document.querySelector("#movieSelector").value, chairs.positions, sentenceManipulator.price)
 } )
 
+document.querySelector("#submit").addEventListener("click", (e) => {
+
+    document.querySelector("#table").classList.toggle("notDisplayed")
+    calculateReceipt(document.querySelector("#movieSelector").value, chairs.positions, sentenceManipulator.price)
+})
+
+chairs.add(140)
+chairs.randomChairSelector()

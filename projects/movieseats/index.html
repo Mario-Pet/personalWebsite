@@ -7,6 +7,7 @@
     <title>Movie Booth Theater</title>
     <link href="styles.css" rel="stylesheet" type="text/css">
     <script defer src="main.js"></script>
+    
 </head>
 <body>
     <div class="mainWrapper">
@@ -49,10 +50,28 @@
         </main>
         <footer>
             <p id="status">You have currently selected <span id="chairsSelected">0</span> chairs and the price sum will be <span id="priceOfAllChairsSelected">0</span>€!</p>
-            <form>
-                <input type="email" placeholder="hey@email.com">
-                <button type="submit" id="submit">Submit</button>
-            </form>
+
+            <button id="submit" class="displayReceipt">Display Receipt</button>
+            <section>
+                <table id="table" class="notDisplayed">
+                    <thead>
+                        <tr>
+                            <th>Movie</th>
+                            <th>Chairs Selected</th>
+                            <th>Price</th>
+                        </tr>
+                        
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td id="movieRunning"></td>
+                            <td id="chairsOccupied"></td>
+                            <td><span id="priceOfChairsOccupied"></span>€</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
         </footer>
     </div>
 </body>
