@@ -20,7 +20,7 @@ Footer - Informing sentence and display button to display the receipt.
 ## Code breakdown
 Code is broken down in the program
 
-// Organization
+## Organization
 
 ![image](https://user-images.githubusercontent.com/64871557/151705287-e68c6a5c-69d8-44bd-840e-a6820cdb4182.png)
 ![SmartSelect_20220130-161558_Samsung Notes](https://user-images.githubusercontent.com/64871557/151705633-1e6595b2-f2a7-4028-9c1d-c35898ad1259.jpg)
