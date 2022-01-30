@@ -9,4 +9,5 @@ Displays in very accurate time and is supported on all device screens.
 
 ## Code breakdown
 
-Code is broken down inside of the .js file.
+Code is broken down inside the .js file.
+
