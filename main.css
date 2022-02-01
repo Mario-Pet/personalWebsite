@@ -59,3 +59,7 @@ select {
   color: var(--purple);
   background-color: var(--dark);
 }
+
+.statusSentence {
+  display: block;
+}

@@ -27,11 +27,11 @@ const chairs = {
                 let valueOfRandom = randomNumber(0, 3);
 
                 if (valueOfRandom == 0) { // left section
-                    makingAChair("A", leftSide.numberOfChairs, "leftSection")
+                    makingAChair("A", leftSide.numberOfChairsLeft, "leftSection")
                 } else if(valueOfRandom == 1) { // center section
-                    makingAChair("B", centerSide.numberOfChairs, "centerSection")
+                    makingAChair("B", centerSide.numberOfChairsCenter, "centerSection")
                 } else if(valueOfRandom == 2) { // right section
-                    makingAChair("C", rightSide.numberOfChairs, "rightSection")
+                    makingAChair("C", rightSide.numberOfChairsRight, "rightSection")
                 } // if statement
             } // for    
         } // pickASide function
@@ -242,5 +242,29 @@ document.querySelector("#submit").addEventListener("click", (e) => {
     calculateReceipt(document.querySelector("#movieSelector").value, chairs.positions, sentenceManipulator.price)
 })
 
-chairs.add(140)
+document.querySelector("#language").addEventListener("change", (e) => {
+    if(document.querySelector("#language").value == "german") {
+        document.querySelector("#headerMovie").textContent = "Movie buchen";
+        document.querySelector("#notoccupiedText").textContent = "Nicht besetzt";
+        document.querySelector("#occupiedText").textContent = "Besetzt";
+        document.querySelector("#selectedText").textContent = "Ausgewählt";
+        document.querySelector("#status").innerHTML = `Sie haben <span id="chairsSelected">0</span> Stühle ausgewählt und der Preis aller Stühlen sind <span id="priceOfAllChairsSelected">0</span>€!`;
+        document.querySelector("#submit").textContent = "Quittung zeigen";
+        document.querySelector("#tableMovie").textContent = "Movie";
+        document.querySelector("#tableChairs").textContent = "Ausgewählte Stühle";
+        document.querySelector("#tablePrice").textContent = "Preis";
+    } else {
+        document.querySelector("#headerMovie").textContent = "Movie Theater Booth";
+        document.querySelector("#notoccupiedText").textContent = "Not Occupied";
+        document.querySelector("#occupiedText").textContent = "Occupied";
+        document.querySelector("#selectedText").textContent = "Selected";
+        document.querySelector("#status").innerHTML = `You have currently selected <span id="chairsSelected">0</span> chairs and the price sum will be <span id="priceOfAllChairsSelected">0</span>€!`
+        document.querySelector("#submit").textContent = "Display Receipt";
+        document.querySelector("#tableMovie").textContent = "Movie";
+        document.querySelector("#tableChairs").textContent = "Selected Chairs";
+        document.querySelector("#tablePrice").textContent = "Price";
+    }
+})
+
+chairs.add(100)
 chairs.randomChairSelector()

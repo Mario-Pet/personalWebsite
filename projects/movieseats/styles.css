@@ -16,11 +16,6 @@
 
 body {
   background-color: var(--dark);
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 90vh;
 }
 
 /*
@@ -112,6 +107,14 @@ select {
  | |  | |/ ____ \ _| |_| |\  |
  |_|  |_/_/    \_\_____|_| \_|
 */
+.mainWrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  min-height: 90vh;
+}
+
 main {
   display: flex;
   justify-content: center;
@@ -215,4 +218,22 @@ td {
 
 .notDisplayed {
   display: none;
+}
+
+select {
+  float: left;
+
+  border: none;
+
+  color: var(--purple);
+  background-color: var(--dark);
+}
+
+#language {
+  width: 100px;
+}
+
+#lom {
+  display: flex;
+  flex-direction: row;
 }
