@@ -244,7 +244,7 @@ document.querySelector("#submit").addEventListener("click", (e) => {
 
 document.querySelector("#language").addEventListener("change", (e) => {
     if(document.querySelector("#language").value == "german") {
-        document.querySelector("#headerMovie").textContent = "Movie buchen";
+        document.querySelector("#headerMovie").textContent = "Movieseat buchen";
         document.querySelector("#notoccupiedText").textContent = "Nicht besetzt";
         document.querySelector("#occupiedText").textContent = "Besetzt";
         document.querySelector("#selectedText").textContent = "Ausgewählt";

@@ -220,20 +220,25 @@ td {
   display: none;
 }
 
-select {
-  float: left;
-
+#language {
   border: none;
+  width: 100px;
 
   color: var(--purple);
   background-color: var(--dark);
 }
 
-#language {
-  width: 100px;
-}
-
 #lom {
   display: flex;
   flex-direction: row;
+}
+
+footer {
+  text-align: center;
+}
+
+@media only screen and (max-width: 465px) {
+  #language {
+    display: block;
+  }
 }

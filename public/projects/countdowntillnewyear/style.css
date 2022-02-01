@@ -1,7 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap");
 
+:root {
+  --purple: #9d5dea;
+  --dark: #242326;
+  --lightPurple: #b691e3;
+}
+* {
+  font-family: "Roboto Mono", monospace;
+}
 body {
-  background-color: #242326;
+  background-color: var(--dark);
+}
+.mainWrapper {
   display: flex;
   align-content: center;
   justify-content: center;
@@ -13,9 +23,9 @@ body {
 }
 
 #newyearsheader {
-  color: #9d5dea;
+  color: var(--purple);
   display: flex;
-  font-family: "Roboto Mono", monospace;
+
   justify-content: center;
 }
 
@@ -31,12 +41,11 @@ body {
 }
 
 article {
-  color: #9d5dea;
+  color: var(--purple);
   height: 120px;
 
   margin: 0% 5%;
   font-size: 12px;
-  font-family: "Roboto Mono", monospace;
 }
 #daysBox {
   display: flex;
@@ -101,6 +110,17 @@ article {
 article > div {
   font-size: 15px;
 }
+
+select {
+  display: absolute;
+  top: 100%;
+  left: 100%;
+
+  border: none;
+  color: var(--purple);
+  background-color: var(--dark);
+}
+
 @media only screen and (max-width: 5000px) {
   .headline {
     font-size: 20px;

@@ -36,7 +36,9 @@ section {
 }
 
 select {
-  float: left;
+  display: absolute;
+  top: 100%;
+  left: 100%;
 
   border: none;
   color: var(--purple);
@@ -46,4 +48,7 @@ select {
 .description {
   color: var(--purple);
   font-size: 12px;
+}
+
+@media only screen and (max-width: 390px) {
 }

@@ -9,29 +9,36 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="container">
-        <header id='newyearsheader'>
-            <span class="headline">new year is in</span>
-        </header>
-        <section id="section">
-            <article id="daysBox">
-                <div id=days></div>
-                <p>days</p>
-            </article>
-            <article id="hoursBox">
-                <div id="hours"></div>
-                <p>hours</p>
-            </article>
-            <article id="minutesBox">
-                <div id="minutes"></div>
-                <p>minutes</p>
-            </article>
-            <article id="secondsBox">
-                <div id="seconds"></div>
-                <p>seconds</p>
-            </article>
-        </section>
+    <select name="language" id="language">
+        <option>german</option>
+        <option>english</option>
+    </select>
+    <div class="mainWrapper">
+        <div id="container">
+            <header id='newyearsheader'>
+                <span class="headline" id="headline">Das neue Jahr ist in</span>
+            </header>
+            <section id="section">
+                <article id="daysBox">
+                    <div id=days></div>
+                    <p id="daysText">Tagen</p>
+                </article>
+                <article id="hoursBox">
+                    <div id="hours"></div>
+                    <p id="hrsText">Stunden</p>
+                </article>
+                <article id="minutesBox">
+                    <div id="minutes"></div>
+                    <p id="minText">Minuten</p>
+                </article>
+                <article id="secondsBox">
+                    <div id="seconds"></div>
+                    <p id="secsText">Sekunden</p>
+                </article>
+            </section>
+        </div>
     </div>
+    
     
 </body>
 </html>
