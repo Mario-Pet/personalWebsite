@@ -12,12 +12,6 @@
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  min-height: 100vh;
-
   background-color: var(--blackBG);
   font-family: "Roboto Mono", monospace;
   color: var(--textWhite);
@@ -34,8 +28,9 @@ body {
 
 .container {
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  min-height: 100vh;
+  flex-direction: column;
   align-items: center;
 }
 
@@ -592,4 +587,14 @@ td {
   .mainTable {
     height: 450px;
   }
+}
+
+select {
+  display: absolute;
+  top: 100%;
+  left: 100%;
+
+  border: none;
+  color: var(--purple);
+  background-color: var(--dark);
 }

@@ -150,3 +150,22 @@ function onChangeCurrency() {
 
 }
 
+
+document.querySelector("#language").addEventListener("change", (e) => {
+    if(document.querySelector("#language").value == "german") {
+        document.querySelector("#headName").textContent = "Name";
+        document.querySelector("#headAmount").textContent = "Summe";
+        document.querySelector("#headDate").textContent = "Datum";
+        document.querySelector("#headStatus").textContent = "Status";
+        document.querySelector("#name").placeholder = "Name"
+    } else {
+        document.querySelector("#headName").textContent = "name";
+        document.querySelector("#headAmount").textContent = "amount";
+        document.querySelector("#headDate").textContent = "date";
+        document.querySelector("#headStatus").textContent = "status";
+        document.querySelector("#name").placeholder = "name"
+    }
+})
+
+
+

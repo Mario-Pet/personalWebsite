@@ -10,6 +10,11 @@
     <link rel="icon" type="image/x-icon" href="../../favicon.ico">
 </head>
 <body>
+
+    <select name="language" id="language">
+        <option>german</option>
+        <option>english</option>
+    </select>
 <main>
     <div class="container">
 
@@ -31,10 +36,10 @@
 
                     <thead>
                         <tr class="trHeader">
-                            <th class="thAndRowName">name</th>
-                            <th class="thRest">amount</th>
-                            <th class="thRest">date</th>
-                            <th class="thRest">status</th>
+                            <th id="headName" class="thAndRowName">Name</th>
+                            <th id="headAmount" class="thRest">Summe</th>
+                            <th id="headDate" class="thRest">Datum</th>
+                            <th id="headStatus" class="thRest">Status</th>
                         </tr>
                     </thead>
                 
@@ -46,7 +51,7 @@
 
         <div class="addTable">
             <form action="" id="form">
-                <input class="inputName" type="text" name="name" placeholder="name" maxlength="60" id="name" required>
+                <input class="inputName" type="text" name="name" placeholder="Name" maxlength="60" id="name" required>
                 <input class="inputAmount" type="text" name="amount" placeholder="€" maxlength="13" id="amountInput" pattern="[\-0-9.]+" required>
                 <label class="datepicker"><img class="dateImage" src="Image.png"><input type="date" value="" name="date" id="date" required></label>
                 <input type="submit" value="OK" class="submitButton">
