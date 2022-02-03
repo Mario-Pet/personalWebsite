@@ -10,7 +10,9 @@
   --red: #f84f4f;
   --textWhite: #c7c7c7;
 }
-
+* {
+  font-family: "Roboto Mono", monospace;
+}
 body {
   background-color: var(--blackBG);
   font-family: "Roboto Mono", monospace;
