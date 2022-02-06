@@ -1,3 +1,4 @@
+
 // Creating a way to create elements easier and creating an arrow function that picks a number based on an array.
 const createElementWithOptions = (type, options = {}) =>
   Object.assign(document.createElement(type), options);
@@ -42,18 +43,19 @@ document.querySelector("form").addEventListener("submit", (e) => {
     const data = new FormData(e.target);
     const row = document.createElement("tr");
     const statusses = statusDecider.get();
+    
     const statusCell = createElementWithOptions("td", {
         textContent: statusses[0],
         className: statusses.join(" ")
     })
 
     document.querySelector("table tbody").append(row);
-
+    
     // Appending every piece of information except the last child.
+    let thValues = ['name', "amount", "date"]
     row.append(
-        ...Array.from(document.querySelectorAll("table th:not(:last-child")).map((th) => 
-        createElementWithOptions("td", {
-            textContent: `${data.get(th.textContent)}${th.textContent === "amount" ? "€" : ""}` // Necessary to add the currency at the end
+        ...thValues.map((th) => createElementWithOptions('td', {
+            textContent: `${data.get(th)}${th === "amount" ? "€" : ""}`
         })),
         statusCell
     );
@@ -166,6 +168,4 @@ document.querySelector("#language").addEventListener("change", (e) => {
         document.querySelector("#name").placeholder = "name"
     }
 })
-
-
 
