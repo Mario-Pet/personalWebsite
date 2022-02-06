@@ -213,7 +213,7 @@ const sentenceManipulator = {
 }
 
 // Calculating the data in the cells of the table
-const calculateReceipt = (movie, seats, price) => {
+const calculateReceipt = () => {
     document.querySelector("#movieRunning").textContent = document.querySelector("#movieSelector").value
     document.querySelector("#chairsOccupied").textContent = chairs.positions;
     document.querySelector("#priceOfChairsOccupied").textContent = chairs.priceOfAllChairsSelected;
@@ -227,7 +227,15 @@ document.querySelector(".chairSelection").addEventListener("click", (e) => {
     let chairsSelected = document.querySelector("#chairsSelected")
     chairsSelected.textContent = chairs.positions.length;
     sentenceManipulator.calculate(document.querySelector("#movieSelector").value)
-    calculateReceipt(document.querySelector("#movieSelector").value, chairs.positions, sentenceManipulator.price)
+    calculateReceipt()
+
+    if(chairsSelected.textContent == 1) {
+        document.querySelector("#stuehle").textContent = "Stuhl";
+        document.querySelector("#stuehlen").textContent = "ist";
+    } else {
+        document.querySelector("#stuehle").textContent = "Stühle";
+        document.querySelector("#stuehlen").textContent = "aller Stühlen ist";
+    }
 })
 
 // Event listener for change of movie
@@ -239,7 +247,11 @@ document.querySelector("#movieSelector").addEventListener("change", (e) => {
 // Event listener for display button pressed
 document.querySelector("#submit").addEventListener("click", (e) => {
     document.querySelector("#table").classList.toggle("notDisplayed")
-    calculateReceipt(document.querySelector("#movieSelector").value, chairs.positions, sentenceManipulator.price)
+    calculateReceipt()
+})
+
+document.querySelector("#chairsSelected").addEventListener("change", (e) => {
+    console.log(e.target.value)
 })
 
 document.querySelector("#language").addEventListener("change", (e) => {
