@@ -229,12 +229,10 @@ document.querySelector(".chairSelection").addEventListener("click", (e) => {
     sentenceManipulator.calculate(document.querySelector("#movieSelector").value)
     calculateReceipt()
 
-    if(chairsSelected.textContent == 1) {
+    if(chairs.positions.length == 1 && document.querySelector("#language").value == "german") {
         document.querySelector("#stuehle").textContent = "Stuhl";
-        document.querySelector("#stuehlen").textContent = "ist";
-    } else {
+    } else if(document.querySelector("#language").value == "german") {
         document.querySelector("#stuehle").textContent = "Stühle";
-        document.querySelector("#stuehlen").textContent = "aller Stühlen ist";
     }
 })
 
@@ -255,12 +253,18 @@ document.querySelector("#chairsSelected").addEventListener("change", (e) => {
 })
 
 document.querySelector("#language").addEventListener("change", (e) => {
+    
     if(document.querySelector("#language").value == "german") {
+        
         document.querySelector("#headerMovie").textContent = "Movieseat buchen";
         document.querySelector("#notoccupiedText").textContent = "Nicht besetzt";
         document.querySelector("#occupiedText").textContent = "Besetzt";
         document.querySelector("#selectedText").textContent = "Ausgewählt";
-        document.querySelector("#status").innerHTML = `Sie haben <span id="chairsSelected">0</span> Stühle ausgewählt und der Preis aller Stühlen sind <span id="priceOfAllChairsSelected">0</span>€!`;
+        if (chairs.positions.length == 1) {
+            document.querySelector("#status").innerHTML = `Sie haben <span id="chairsSelected">${chairs.positions.length}</span> <span id="stuehle">Stuhl</span> ausgewählt und der Gesamtpreis <span id="stuehlen">ist</span>  <span id="priceOfAllChairsSelected">${chairs.priceOfAllChairsSelected}</span>€!`;
+        } else {
+            document.querySelector("#status").innerHTML = `Sie haben <span id="chairsSelected">${chairs.positions.length}</span> <span id="stuehle">Stühle</span> ausgewählt und der Gesamtpreis ist <span id="priceOfAllChairsSelected">${chairs.priceOfAllChairsSelected}</span>€!`;
+        }
         document.querySelector("#submit").textContent = "Quittung zeigen";
         document.querySelector("#tableMovie").textContent = "Movie";
         document.querySelector("#tableChairs").textContent = "Ausgewählte Stühle";
@@ -270,7 +274,7 @@ document.querySelector("#language").addEventListener("change", (e) => {
         document.querySelector("#notoccupiedText").textContent = "Not Occupied";
         document.querySelector("#occupiedText").textContent = "Occupied";
         document.querySelector("#selectedText").textContent = "Selected";
-        document.querySelector("#status").innerHTML = `You have currently selected <span id="chairsSelected">0</span> chairs and the price sum will be <span id="priceOfAllChairsSelected">0</span>€!`
+        document.querySelector("#status").innerHTML = `You have currently selected <span id="chairsSelected">${chairs.positions.length}</span> chairs and the price sum will be <span id="priceOfAllChairsSelected">${chairs.priceOfAllChairsSelected}</span>€!`
         document.querySelector("#submit").textContent = "Display Receipt";
         document.querySelector("#tableMovie").textContent = "Movie";
         document.querySelector("#tableChairs").textContent = "Selected Chairs";
