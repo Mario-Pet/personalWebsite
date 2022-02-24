@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>expense tracker</title>
+    <script defer src="main.js"></script>
+    <link rel="stylesheet" href="main.css">
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+</head>
+<body>
+    <a class="line sourcecode dark" href="https://github.com/Mario-Pet" id="githubLine">source code</a>
+
+    <select name="language" id="language">
+        <option>german</option>
+        <option>english</option>
+    </select>
+<main>
+    <div class="container">
+
+        <div class="mainTable">
+
+            <div class="tableHeader">
+                <p id="balanceP" class="balance"><span id="balance">0</span><span id="currency">€</span></p>
+                <div>
+                    <select name="currecy" id="currencySelector" class="currency selectors" onchange="onChangeCurrency()">
+                        <option id="€">€</option>
+                        <option id="$">$</option>
+                    </select>
+
+                </div>
+                
+            </div>
+            <div class="tableScroll">
+            <table class="table">
+
+                    <thead class="whiteLine">
+                        <tr class="trHeader">
+                            <th id="headName" class="thAndRowName">Name</th>
+                            <th id="headAmount" class="thRest">Summe</th>
+                            <th id="headDate" class="thRest">Datum</th>
+                            <th id="headStatus" class="thRest">Status</th>
+                        </tr>
+                    </thead>
+                
+                        <tbody id="mainTbody"></tbody>
+
+            </table>
+            </div>
+        </div>
+
+        <div class="addTable">
+            <form action="" id="form">
+                <input class="inputName" type="text" name="name" placeholder="Name" maxlength="60" id="name" required>
+                <input class="inputAmount" type="text" name="amount" placeholder="€" maxlength="13" id="amountInput" pattern="[\-0-9.]+" required>
+                <label class="datepicker"><img class="dateImage" src="Image.png"><input type="date" value="" name="date" id="date" required></label>
+                <input type="submit" value="OK" class="submitButton">
+            </form>
+        </div>
+
+    </div>
+</main>
+<!--
+<div class="theme">
+    <input type="checkbox" class="checkbox" id="chk" value="white"/>
+    <label class="label" for="chk" id="chklabel">
+        <img class="themeIconSun" src="/../../imgs/whiteThemeIcon.png">
+        <img class="themeIconMoon" src="/../../imgs/darkThemeIcon.png">
+        <div class="ball" id="ball"></div>
+    </label>
+</div>
+-->
+</body>
+</html>

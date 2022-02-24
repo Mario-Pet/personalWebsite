@@ -1,0 +1,360 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --purple: #9d5dea;
+  --lightPurple: #b691e3;
+  --dark: #242326;
+  --lighterDark: #504f4f;
+  --white: #dddddd;
+  --tempWhite: #c9c6c6;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+
+  font-family: Poppins;
+}
+
+body {
+  background-color: var(--white);
+}
+
+/*
+  _    _ ______          _____  ______ _____  
+ | |  | |  ____|   /\   |  __ \|  ____|  __ \ 
+ | |__| | |__     /  \  | |  | | |__  | |__) |
+ |  __  |  __|   / /\ \ | |  | |  __| |  _  / 
+ | |  | | |____ / ____ \| |__| | |____| | \ \ 
+ |_|  |_|______/_/    \_\_____/|______|_|  \_\
+*/
+
+header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 5px;
+
+  color: var(--dark);
+}
+
+select {
+  /* When selected a highlight box on windows 10 pops up, decoration for that highlight box */
+  padding: 5px 0px 5px 5px;
+  border-radius: 10px;
+
+  margin-bottom: 20px;
+
+  width: 300px;
+  text-align: center;
+
+  color: var(--dark);
+  background-color: transparent;
+
+  border: none;
+
+  font-weight: 700;
+}
+
+.info {
+  background-color: var(--white);
+
+  width: 400px !important;
+  height: 30px;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 8px;
+
+  font-size: 12px;
+  font-weight: 500;
+}
+.chairsInfo {
+  display: flex;
+  align-items: center;
+
+  color: var(--white);
+}
+
+.chair {
+  margin: 5px;
+
+  width: 13px;
+  height: 13px;
+}
+
+.unoccupied {
+  content: url("chairNotOccupied.png");
+}
+
+.occupied {
+  content: url("chairOccupied.png");
+}
+
+.selected {
+  content: url("chairSelected.png");
+  transform: scale(1.3);
+}
+
+.line {
+  font-size: 100%;
+  font-weight: 600;
+}
+
+.sourcecode {
+  position: absolute;
+  top: 15px;
+  right: 5px;
+  line-height: 8px;
+}
+/*
+  __  __          _____ _   _ 
+ |  \/  |   /\   |_   _| \ | |
+ | \  / |  /  \    | | |  \| |
+ | |\/| | / /\ \   | | | . ` |
+ | |  | |/ ____ \ _| |_| |\  |
+ |_|  |_/_/    \_\_____|_| \_|
+*/
+.mainWrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  min-height: 90vh;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-direction: column;
+}
+
+.chairSelection {
+  display: flex;
+  flex-direction: row;
+}
+
+.screen {
+  width: 35%;
+  aspect-ratio: 2 / 1;
+  margin: 30px 0px 20px 0px;
+  background-color: var(--dark);
+  box-shadow: 0 0 20px 10px var(--dark);
+}
+
+.screenWhite {
+  width: 35%;
+  aspect-ratio: 2 / 1;
+  margin: 30px 0px 20px 0px;
+  background-color: var(--white) !important;
+  box-shadow: 0 0 20px 10px var(--white) !important;
+}
+
+.chairsGroup {
+  display: grid;
+  width: max-content;
+  grid-template-columns: repeat(var(--chairsInRow), auto);
+  margin: 10px 10px 40px 10px;
+}
+
+.chairsGroup.center {
+  --chairsInRow: 6;
+}
+
+.chairsGroup.side {
+  --chairsInRow: 3;
+}
+img {
+  transition: all 0.2s ease;
+}
+img:hover {
+  transform: scale(1.2);
+}
+/*
+  ______ ____   ____ _______ ______ _____  
+ |  ____/ __ \ / __ \__   __|  ____|  __ \ 
+ | |__ | |  | | |  | | | |  | |__  | |__) |
+ |  __|| |  | | |  | | | |  |  __| |  _  / 
+ | |   | |__| | |__| | | |  | |____| | \ \ 
+ |_|    \____/ \____/  |_|  |______|_|  \_\
+ */
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  padding: 7px;
+  margin: 20px 0px 40px 0px;
+
+  border: none;
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+.buttonDark {
+  background-color: var(--dark);
+}
+
+.buttonDark:hover {
+  box-shadow: 0 0 10px 3px var(--dark);
+}
+
+.buttonWhite {
+  background-color: var(--white);
+}
+.buttonWhite:hover {
+  box-shadow: 0 0 10px 3px var(--white);
+}
+table {
+  margin: 0px 10px 0px 0px;
+
+  border-collapse: collapse;
+
+  color: var(--dark);
+}
+th {
+  font-size: 20px;
+  padding: 5px;
+}
+
+td {
+  text-align: center;
+  width: 200px;
+  padding: 10px;
+  word-break: break-word;
+}
+
+.notDisplayed {
+  display: none;
+}
+
+#language {
+  border: none;
+  width: 100px;
+  font-size: 16px;
+  font-weight: normal;
+
+  background-color: transparent;
+}
+
+#lom {
+  display: flex;
+  flex-direction: row;
+}
+
+footer {
+  text-align: center;
+}
+
+@media only screen and (max-width: 465px) {
+  #language {
+    display: block;
+  }
+}
+
+.theme {
+  position: absolute;
+  bottom: 10px;
+  left: 15px;
+
+  box-sizing: border-box;
+}
+.darkBG {
+  background-color: var(--dark);
+}
+.whiteBG {
+  background-color: var(--white);
+}
+.dark {
+  color: var(--dark);
+}
+
+.white {
+  color: var(--white);
+}
+
+.language {
+  color: var(--dark);
+  background-color: transparent;
+}
+
+.languageWhite {
+  color: var(--white);
+  background-color: transparent;
+}
+
+.buttonLighter {
+  background-color: var(--lighterDark) !important;
+}
+
+body.dark {
+  background: var(--dark);
+}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.label {
+  background-color: #0e0e0e;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  position: relative;
+  height: 14px;
+  width: 30px;
+  transform: scale(1.5);
+}
+
+.label > .ball {
+  background-color: var(--white);
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  height: 10px;
+  width: 10px;
+  transform: translateX(0px);
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .label .ball {
+  transform: translateX(15px);
+}
+
+.themeIconSun {
+  position: absolute;
+  right: 3px;
+  width: 10px;
+  height: 10px;
+}
+
+.themeIconMoon {
+  position: absolute;
+  left: 3px;
+  width: 9px;
+  height: 9px;
+}

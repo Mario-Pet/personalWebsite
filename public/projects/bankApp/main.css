@@ -1,0 +1,696 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --purple: #9d5dea;
+  --darker: #1e1e1f;
+  --lightishGray: hsl(0, 0%, 17%);
+  --green: #4ff85d;
+  --yellow: #f8f84f;
+  --red: #f84f4f;
+  --white: #dddddd;
+  --tempWhite: #a8a1a1;
+  --dark: #242326;
+}
+* {
+  font-family: Poppins;
+}
+body {
+  background-color: var(--white);
+  font-family: "Roboto Mono", monospace;
+  color: var(--dark);
+  /*color: #9d5dea;*/
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.darkBG {
+  background-color: var(--dark) !important;
+}
+.whiteBG {
+  background-color: var(--white) !important;
+}
+.dark {
+  color: var(--dark) !important;
+}
+
+.white {
+  color: var(--white) !important;
+}
+
+.darkLine {
+  border-bottom: 1px solid var(--dark) !important;
+}
+
+.whiteLine {
+  border-bottom: 1px solid var(--white) !important;
+}
+.line {
+  font-size: 100%;
+  font-weight: 600;
+}
+
+.sourcecode {
+  position: absolute;
+  top: 15px;
+  right: 5px;
+  line-height: 8px;
+}
+/*
+    ___  _____   ______
+    / _ \/  _/ | / / __/
+  / // // / | |/ /\ \  
+  /____/___/ |___/___/  
+                        
+  */
+
+.container {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mainTable {
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+
+  width: 775px;
+  height: 600px;
+  max-height: 600px;
+
+  background-color: var(--dark);
+  border-radius: 30px;
+}
+
+/*
+    _        _    _       _                _         
+  | |_ __ _| |__| |___  | |_  ___ __ _ __| |___ _ _ 
+  |  _/ _` | '_ | / -_) | ' \/ -_/ _` / _` / -_| '_|
+    \__\__,_|_.__|_\___| |_||_\___\__,_\__,_\___|_|  
+  */
+
+.tableHeader {
+  height: 100px;
+  display: flex;
+  width: 90%;
+  align-items: center;
+  font-size: 30px;
+  justify-content: space-between;
+}
+
+.balance {
+  padding: 25px 0px;
+  color: var(--white);
+}
+
+.currency {
+  width: 30px;
+  max-width: 150px;
+  text-overflow: ellipsis;
+}
+.selectors {
+  background-color: var(--dark);
+  color: var(--white);
+  border: none;
+}
+
+/*
+            _    _   _                _         
+    __ _ __| |__| | | |_  ___ __ _ __| |___ _ _ 
+  / _` / _` / _` | | ' \/ -_/ _` / _` / -_| '_|
+  \__,_\__,_\__,_| |_||_\___\__,_\__,_\___|_|  
+  */
+
+.addTable {
+  display: flex;
+  margin-top: 15px;
+  justify-content: space-around;
+  align-items: center;
+
+  width: 735px;
+  height: 71px;
+
+  background-color: var(--dark);
+  border-radius: 30px;
+}
+
+.inputName {
+  width: 246px;
+  height: 42px;
+  border-radius: 60px;
+  border: none;
+  background-color: var(--lightishGray);
+  text-align: center;
+  color: var(--white);
+}
+.inputName::placeholder {
+  text-align: center;
+  color: var(--white);
+  font-family: "Roboto Mono", monospace;
+  font-weight: 400;
+}
+
+.inputAmount {
+  width: 141px;
+  height: 42px;
+  border-radius: 60px;
+  border: none;
+  background-color: var(--lightishGray);
+  text-align: center;
+  color: var(--white);
+}
+
+.inputAmount::placeholder {
+  text-align: center;
+  color: var(--white);
+  font-family: "Roboto Mono", monospace;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.inputDate {
+  width: 141px;
+  height: 42px;
+  border-radius: 60px;
+  border: none;
+  background-color: var(--darker);
+}
+
+.datepicker {
+  display: inline-flex;
+  position: relative;
+  overflow: clip;
+}
+.datepicker:focus-within {
+  outline: black auto 2px;
+}
+.datepicker > input[type="date"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+.datepicker > input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  top: -150%;
+  left: -150%;
+  width: 300%;
+  height: 300%;
+  cursor: pointer;
+}
+
+.dateImage {
+  width: 30px;
+  height: 30px;
+  filter: hue-rotate(0, 0, 20);
+  padding-bottom: 5px;
+}
+
+form {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  align-items: center;
+}
+.submitButton {
+  padding: 10px 20px;
+  border-radius: 60px;
+  border: none;
+
+  background-color: var(--white);
+  font-weight: 600;
+}
+/*
+  _________   ___  __   ____
+  /_  __/ _ | / _ )/ /  / __/
+  / / / __ |/ _  / /__/ _/  
+  /_/ /_/ |_/____/____/___/  
+*/
+
+table {
+  display: table;
+
+  flex-direction: column;
+  width: 700px;
+
+  max-height: 300px !important;
+  overflow-y: auto !important;
+
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px 5px;
+
+  text-align: center;
+  word-break: break-all;
+}
+
+thead tr th {
+  position: sticky;
+  top: 0;
+}
+
+tbody {
+  color: var(--white);
+  display: table-row-group;
+  vertical-align: middle;
+}
+
+th {
+  font-size: 22px;
+  color: var(--white);
+  background-color: var(--dark);
+}
+
+td {
+  color: var(--white);
+}
+
+.tableScroll {
+  max-height: 500px;
+  overflow: auto;
+}
+.pending {
+  color: var(--yellow);
+}
+
+.approved {
+  color: var(--green);
+}
+
+.denied {
+  color: var(--red);
+}
+.theme {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+body.dark {
+  background: var(--dark);
+}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.label {
+  background-color: #0e0e0e;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  position: relative;
+  height: 14px;
+  width: 30px;
+  transform: scale(1.5);
+}
+
+.label > .ball {
+  background-color: var(--white);
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  height: 10px;
+  width: 10px;
+  transform: translateX(0px);
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .label .ball {
+  transform: translateX(15px);
+}
+
+.themeIconSun {
+  position: absolute;
+  right: 3px;
+  width: 10px;
+  height: 10px;
+}
+
+.themeIconMoon {
+  position: absolute;
+  left: 3px;
+  width: 9px;
+  height: 9px;
+}
+
+@media only screen and (max-width: 800px) {
+  .mainTable {
+    width: 650px;
+  }
+  table {
+    width: 600px;
+  }
+  form {
+    width: 90%;
+  }
+  .addTable {
+    width: 610px;
+  }
+}
+
+@media only screen and (max-width: 685px) {
+  .mainTable {
+    width: 600px;
+  }
+  table {
+    width: 550px;
+  }
+  form {
+    width: 90%;
+  }
+
+  .addTable {
+    width: 570px;
+  }
+}
+
+@media only screen and (max-width: 685px) {
+  .mainTable {
+    width: 600px;
+  }
+  table {
+    width: 550px;
+  }
+
+  .addTable {
+    width: 570px;
+  }
+}
+
+@media only screen and (max-width: 610px) {
+  .mainTable {
+    width: 550px;
+  }
+  table {
+    width: 500px;
+  }
+
+  .addTable {
+    width: 530px;
+  }
+
+  form {
+    width: 90%;
+  }
+
+  .inputName {
+    width: 206px;
+  }
+
+  .inputAmount {
+    width: 113px;
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .mainTable {
+    width: 500px;
+  }
+  table {
+    width: 450px;
+  }
+
+  .addTable {
+    width: 490px;
+  }
+
+  form {
+    width: 90%;
+  }
+
+  .inputName {
+    width: 206px;
+  }
+
+  .inputAmount {
+    width: 113px;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .mainTable {
+    width: 420px;
+  }
+  table {
+    width: 370px;
+  }
+
+  .addTable {
+    width: 390px;
+  }
+  th {
+    font-size: 20px;
+  }
+
+  td {
+    font-size: 12px;
+  }
+
+  form {
+    width: 90%;
+  }
+
+  .inputName {
+    width: 132px;
+  }
+
+  .inputAmount {
+    width: 72px;
+  }
+}
+
+@media only screen and (max-width: 460px) {
+  .mainTable {
+    width: 370px;
+  }
+  table {
+    width: 320px;
+  }
+  th {
+    font-size: 20px;
+  }
+
+  td {
+    font-size: 12px;
+  }
+  .addTable {
+    width: 330px;
+  }
+
+  form {
+    width: 90%;
+  }
+
+  .inputName {
+    width: 105px;
+  }
+
+  .inputAmount {
+    width: 57px;
+  }
+}
+@media only screen and (max-width: 460px) {
+  .mainTable {
+    width: 370px;
+  }
+  table {
+    width: 320px;
+  }
+  th {
+    font-size: 14px;
+  }
+
+  td {
+    font-size: 12px;
+  }
+  .addTable {
+    width: 330px;
+  }
+
+  form {
+    width: 90%;
+  }
+
+  .inputName {
+    width: 105px;
+  }
+
+  .inputAmount {
+    width: 57px;
+  }
+}
+
+@media only screen and (max-width: 390px) {
+  .mainTable {
+    width: 320px;
+  }
+  table {
+    width: 270px;
+  }
+  th {
+    font-size: 10px;
+  }
+
+  td {
+    font-size: 10px;
+  }
+  #balance {
+    font-size: 20px;
+  }
+  #currency {
+    font-size: 20px;
+  }
+  .addTable {
+    width: 300px;
+  }
+
+  form {
+    width: 90%;
+  }
+
+  .inputName {
+    width: 95px;
+  }
+
+  .inputAmount {
+    width: 47px;
+  }
+}
+
+@media only screen and (max-width: 370px) {
+  .mainTable {
+    width: 320px;
+  }
+  table {
+    width: 270px;
+  }
+  th {
+    font-size: 15px;
+  }
+
+  td {
+    font-size: 8px;
+  }
+  #balance {
+    font-size: 20px;
+  }
+  #currency {
+    font-size: 20px;
+  }
+  .addTable {
+    width: 240px;
+    height: 210px;
+  }
+  .inputName {
+    width: 95px;
+    margin: 5px;
+  }
+  form {
+    flex-direction: column;
+  }
+  .inputAmount {
+    width: 47px;
+    margin: 10px;
+  }
+  #date {
+    margin: 10px;
+  }
+
+  .submitButton {
+    margin: 5px;
+  }
+}
+
+@media only screen and (max-width: 330px) {
+  .mainTable {
+    width: 270px;
+  }
+  table {
+    width: 220px;
+  }
+  th {
+    font-size: 8px;
+  }
+
+  td {
+    font-size: 8px;
+  }
+  #balance {
+    font-size: 20px;
+  }
+  #currency {
+    font-size: 20px;
+  }
+  .addTable {
+    width: 240px;
+    height: 210px;
+  }
+
+  form {
+    width: 90%;
+    flex-direction: column;
+  }
+
+  .inputName {
+    width: 95px;
+    margin: 5px;
+  }
+
+  .inputAmount {
+    width: 47px;
+    margin: 10px;
+  }
+  #date {
+    margin: 10px;
+  }
+
+  .submitButton {
+    margin: 5px;
+  }
+}
+
+@media only screen and (max-height: 720px) {
+  .mainTable {
+    height: 550px;
+  }
+}
+
+@media only screen and (max-height: 670px) {
+  .mainTable {
+    height: 500px;
+  }
+}
+
+@media only screen and (max-height: 610px) {
+  .mainTable {
+    height: 450px;
+  }
+}
+
+select {
+  display: absolute;
+  top: 100%;
+  left: 100%;
+  font-size: 16px;
+
+  border: none;
+  color: var(--dark);
+  background-color: var(--white);
+}

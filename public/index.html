@@ -4,45 +4,88 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>maki</title>
+    <title>portfolio</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
     <script defer src="main.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
-    <link href="main.css" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-
 </head>
-<body>
-        
-        <div class="top">
-            <div class="topchild">
-                <select name="language" id="language">
-                    <option>german</option>
-                    <option>english</option>
-                </select>
-            </div>
-            
-    
-    
-            <div id="links" class="topchild">
-                <a id="projects" href="/projects/projects.html">projekte</a>
-                <a id="github" href="https://github.com/Mario-Pet">github</a>
-            </div> 
-        </div>
+<body id="body">
+    <select id="language" class="language">
+        <option>german</option>
+        <option>english</option>
+    </select>
+    <a class="line github" href="https://github.com/Mario-Pet" id="githubLine">github</a>
+    <div class="mainContainer"> 
+        <div class="container">
+            <section class="firstSection">
+                <div class="firstSectionFirstColumn">
+                    <span class="makiHeadline" id="makiHeadline">hallo, ich bin <span class="maki" id="makiLine">maki;</span></span><br>
+                    <span class="line underHeadline" id="underHeadline">Ich liebe zu programmieren und ich liebe zu lernen.</span>
+                </div>
+                <div class="secondSectionFirstColumn">
+                    <span class="subHeadline" id="projectsHeadline">PROJEKTE</span><br>
 
-    <div class="content">
-    <div id="mainWrapper">
-        <span id="underConstructionSentence">Diese Website befindet sich derzeit im Aufbau.</span>
-        <span id="returnSentence">Bitte kommen Sie in naher Zukunft wieder.</span>
-        <br>
-        <span id="myProjectsSentence">Meine Projekte sind oben rechts auf der Seite zu sehen.</span>
+                    <a href="projects/bankApp/main.html" class="line" id="projectsBankApp">Bank App;</a>
+                    <a href="projects/cinemaApp/index.html" class="line" id="projectsCinemaApp">Kinoplatzreservierung;</a>
+                    <a href="projects/countdown/countdown.html" class="line" id="projectsCountdown">Countdown bis zum neuen Jahr;</a>
+
+                </div>
+                <div class="thirdSectionFirstColumn">
+                    <span class="subHeadline" id="skillsLine">SKILLS</span>
+                    <ul>
+                        <li class="liFirstRow">
+                            <img title="Javascript" class="skillsImg liOther" src="imgs/skills/whbl/javascript.png" id="jsIcon">
+                            <img title="HTML5" class="skillsImg liOther" src="imgs/skills/whbl/html.png" id="htmlIcon">
+                            <img title="CSS3" class="skillsImg liOther" src="imgs/skills/whbl/css.png" id="cssIcon">
+                            <img title="Git" class="skillsImg liOther" src="imgs/skills/whbl/git.png" id="gitIcon">
+                            <img title="Github" class="skillsImg liOther" src="imgs/skills/whbl/github.png" id="githubIcon">
+                            <img title="Firebase" class="skillsImg liOther" src="imgs/skills/whbl/firebase.png" id="firebaseIcon">
+                        </li>
+                        <li>
+                            <img title="Figma" class="skillsImg liOther" src="imgs/skills/whbl/figma.png" id="figmaIcon">
+                            <img title="Adobe Xd" class="skillsImg liOther" src="imgs/skills/whbl/adobexd.png" id="adobexdIcon">
+                            <img title="Photoshop" class="skillsImg liOther" src="imgs/skills/whbl/photoshop.png" id="photoshopIcon">
+                            <img title="Adobe After Effects" class="skillsImg liOther" src="imgs/skills/whbl/aftereffects.png" id="aftereffectsIcon">
+
+                        </li>
+                        <li>
+                            <img title="Codewars" class="skillsImg liOther" src="imgs/skills/whbl/codewars.png" id="codewarsIcon">
+                            <img title="Codecademy" class="skillsImg"src="imgs/skills/whbl/codecademy.png" id="codecademyIcon">
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="secondSection">
+            </section>
+            <section class="thirdSection">
+                <div class="firstSectionThirdColumn">
+                    <img src="imgs/logoDark1080.png" alt="" class="logo" id="logoImg">
+                </div>
+                <div class="secondSectionThirdColumn" id="secondSectionThirdColumn"></div>
+                <div class="thirdSectionThirdColumn">
+                    <div class="about">
+                        <span class="subHeadline" id="about">ÜBER MICH</span><br>
+                        <span class="line" id="aboutLine">Ich lese Bücher oft, spiele Klavier und liebe Musik.</span>
+                    </div>
+                    
+                    <div class="contact">
+                        <span class="subHeadline" id="contact">KONTAKT</span><br>
+                        <span class="line" id="underContact">contact@mariopetkovic.com</span>
+                    </div>
+                    
+                </div>
+            </section> 
+    
+        </div>
     </div>
     
-    <div id="secondWrapper">
-        <span id="contactSentence">Kontaktieren Sie mich unter: hey@mariopetkovic.com</span><br>
-        <span>maki</span>
+    <div class="theme">
+        <input type="checkbox" class="checkbox" id="chk" value="white"/>
+        <label class="label" for="chk" id="chklabel">
+            <img class="themeIconSun" src="imgs/whiteThemeIcon.png">
+            <img class="themeIconMoon" src="imgs/darkThemeIcon.png">
+            <div class="ball" id="ball"></div>
+        </label>
     </div>
-</div>
+    
 </body>
 </html>

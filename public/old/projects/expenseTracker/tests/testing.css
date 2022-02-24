@@ -1,0 +1,19 @@
+table thead {
+  text-align: left;
+  border: 1px solid black;
+  text-align: center !important;
+}
+th,
+td {
+  border: 1px solid black;
+  word-break: break-all;
+  text-align: center !important;
+}
+
+table {
+  display: table;
+  width: 80%;
+  border: 1px solid black;
+  text-align: center !important;
+  border-collapse: collapse;
+}

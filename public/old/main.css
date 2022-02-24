@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap");
+* {
+  font-family: "Roboto Mono", monospace;
+}
+:root {
+  --purple: #9d5dea;
+  --dark: #242326;
+  --lightPurple: #b691e3;
+}
+
+body {
+  background-color: var(--dark);
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 70vh;
+}
+#mainWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 40px 0px;
+}
+
+#mainWrapper > span {
+  color: var(--purple);
+  text-align: center;
+  font-size: 12px;
+}
+
+#secondWrapper > span {
+  color: var(--purple);
+  text-align: center;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  font-size: 12px;
+  color: var(--purple);
+}
+a:hover {
+  color: var(--lightPurple);
+}
+a:link {
+  text-decoration: none;
+}
+
+select {
+  border: none;
+  color: var(--purple);
+  background-color: var(--dark);
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.topchild {
+  width: 60px;
+  height: 100px;
+}
