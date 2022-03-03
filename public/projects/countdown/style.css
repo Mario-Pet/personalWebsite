@@ -8,11 +8,33 @@
   --tempWhite: #a8a1a1;
 }
 * {
+  margin: 0;
+  padding: 0;
   font-family: Poppins;
+
+  transition: background 0.2s linear;
+}
+body,
+html {
+  margin: 0;
+  padding: 0;
 }
 body {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+
   background-color: var(--white);
-  transition: background 0.2s linear;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
 }
 .darkBG {
   background-color: var(--dark) !important;
@@ -66,6 +88,19 @@ body.dark {
   transform: translateX(15px);
 }
 
+.theme {
+  position: relative;
+  bottom: 10px;
+  left: 10px;
+}
+main {
+  display: flex;
+  flex-direction: column;
+}
+.sections {
+  display: flex;
+  justify-content: center;
+}
 .themeIconSun {
   position: absolute;
   right: 3px;
@@ -80,15 +115,12 @@ body.dark {
   height: 9px;
 }
 
-.mainWrapper {
-  display: flex;
-  align-content: center;
-  justify-content: center;
-}
 #container {
-  height: 450px;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: space-between;
   flex-direction: column;
-  margin-top: 260px;
 }
 
 #newyearsheader {
