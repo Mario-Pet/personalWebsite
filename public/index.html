@@ -4,80 +4,94 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>portfolio</title>
-    <link rel="stylesheet" type="text/css" href="main.css">
+    <link href="main.css" rel="stylesheet">
     <script defer src="main.js"></script>
+    <title>portfolio</title>
 </head>
-<body id="body">
-    <select id="language" class="language">
-        <option>german</option>
-        <option>english</option>
-    </select>
-    <a class="line github" href="https://github.com/Mario-Pet" id="githubLine">github</a>
-    <div class="mainContainer"> 
-        <div class="container">
-            <section class="firstSection">
-                <div class="firstSectionFirstColumn">
+<body>
+
+
+<div class="container">
+    <nav>
+        <div>
+            <select id="language" class="language">
+                <option>german</option>
+                <option>english</option>
+            </select>
+        </div>
+        <div>
+            <a class="line github" href="https://github.com/Mario-Pet" id="githubLine">github</a>
+        </div>
+    </nav>
+    <div class="parent">
+        <div class="top">
+            <div class="firstSectionTop">
+                <div class="headline">
                     <span class="makiHeadline" id="makiHeadline">hallo, ich bin <span class="maki" id="makiLine">maki;</span></span><br>
                     <span class="line underHeadline" id="underHeadline">Ich liebe zu programmieren und ich liebe zu lernen.</span>
                 </div>
-                <div class="secondSectionFirstColumn">
+                <div class="projects">
                     <span class="subHeadline" id="projectsHeadline">PROJEKTE</span><br>
 
                     <a href="projects/bankApp/main.html" class="line" id="projectsBankApp">Bank App;</a>
                     <a href="projects/cinemaApp/index.html" class="line" id="projectsCinemaApp">Kinoplatzreservierung;</a>
                     <a href="projects/countdown/countdown.html" class="line" id="projectsCountdown">Countdown bis zum neuen Jahr;</a>
-
                 </div>
-                <div class="thirdSectionFirstColumn">
-                    <span class="subHeadline" id="skillsLine">SKILLS</span>
-                    <ul>
-                        <li class="liFirstRow">
-                            <img title="Javascript" class="skillsImg liOther" src="imgs/skills/whbl/javascript.png" id="jsIcon">
-                            <img title="HTML5" class="skillsImg liOther" src="imgs/skills/whbl/html.png" id="htmlIcon">
-                            <img title="CSS3" class="skillsImg liOther" src="imgs/skills/whbl/css.png" id="cssIcon">
-                            <img title="Git" class="skillsImg liOther" src="imgs/skills/whbl/git.png" id="gitIcon">
-                            <img title="Github" class="skillsImg liOther" src="imgs/skills/whbl/github.png" id="githubIcon">
-                            <img title="Firebase" class="skillsImg liOther" src="imgs/skills/whbl/firebase.png" id="firebaseIcon">
-                        </li>
-                        <li>
-                            <img title="Figma" class="skillsImg liOther" src="imgs/skills/whbl/figma.png" id="figmaIcon">
-                            <img title="Adobe Xd" class="skillsImg liOther" src="imgs/skills/whbl/adobexd.png" id="adobexdIcon">
-                            <img title="Photoshop" class="skillsImg liOther" src="imgs/skills/whbl/photoshop.png" id="photoshopIcon">
-                            <img title="Adobe After Effects" class="skillsImg liOther" src="imgs/skills/whbl/aftereffects.png" id="aftereffectsIcon">
-
-                        </li>
-                        <li>
-                            <img title="Codewars" class="skillsImg liOther" src="imgs/skills/whbl/codewars.png" id="codewarsIcon">
-                            <img title="Codecademy" class="skillsImg"src="imgs/skills/whbl/codecademy.png" id="codecademyIcon">
-                        </li>
-                    </ul>
-                </div>
-            </section>
-            <section class="secondSection">
-            </section>
-            <section class="thirdSection">
-                <div class="firstSectionThirdColumn">
+            </div>
+            <div class="secondSectionTop">
+                <div class="img">
                     <img src="imgs/logoDark1080.png" alt="" class="logo" id="logoImg">
                 </div>
-                <div class="secondSectionThirdColumn" id="secondSectionThirdColumn"></div>
-                <div class="thirdSectionThirdColumn">
-                    <div class="about">
-                        <span class="subHeadline" id="about">ÜBER MICH</span><br>
-                        <span class="line" id="aboutLine">Ich lese Bücher oft, spiele Klavier und liebe Musik.</span>
-                    </div>
-                    
-                    <div class="contact">
-                        <span class="subHeadline" id="contact">KONTAKT</span><br>
-                        <span class="line" id="underContact">contact@mariopetkovic.com</span>
-                    </div>
-                    
+                
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="firstSectionBottom">
+
+                <div class="firstRow">
+                    <span class="subHeadline" id="skillsLine">SKILLS</span>
                 </div>
-            </section> 
-    
+                <div class="imgs">
+                    <section class="firstImgs">
+                        <ul>
+                            <li><img title="Javascript" class="skillsImg" src="imgs/skills/whbl/javascript.png" id="jsIcon"></li>
+                            <li><img title="HTML5" class="skillsImg" src="imgs/skills/whbl/html.png" id="htmlIcon"></li>
+                            <li><img title="CSS3" class="skillsImg" src="imgs/skills/whbl/css.png" id="cssIcon"></li>
+                            <li><img title="Git" class="skillsImg" src="imgs/skills/whbl/git.png" id="gitIcon"></li>
+                            <li><img title="Github" class="skillsImg" src="imgs/skills/whbl/github.png" id="githubIcon"></li>
+                            <li><img title="Firebase" class="skillsImg" src="imgs/skills/whbl/firebase.png" id="firebaseIcon"></li>
+                        </ul>
+                    </section>
+                    
+                    <section class="secondImgs">
+                        <ul>
+                            <li><img title="Figma" class="skillsImg" src="imgs/skills/whbl/figma.png" id="figmaIcon"></li>
+                            <li><img title="Adobe Xd" class="skillsImg" src="imgs/skills/whbl/adobexd.png" id="adobexdIcon"></li>
+                            <li><img title="Photoshop" class="skillsImg" src="imgs/skills/whbl/photoshop.png" id="photoshopIcon"></li>
+                            <li><img title="Adobe After Effects" class="skillsImg" src="imgs/skills/whbl/aftereffects.png" id="aftereffectsIcon"></li>
+                        </ul>
+                    </section>
+                    <section class="thirdImgs">
+                        <ul>
+                            <li><img title="Codewars" class="skillsImg" src="imgs/skills/whbl/codewars.png" id="codewarsIcon"></li>
+                            <li><img title="Codecademy" class="skillsImg"src="imgs/skills/whbl/codecademy.png" id="codecademyIcon"></li>
+                        </ul>
+                    </section>
+            </div>
+        </div>
+        <div class="secondSectionBottom">
+            <div class="about">
+                <span class="subHeadline" id="about">ÜBER MICH</span><br>
+                <span class="line" id="aboutLine">Ich lese Bücher oft, spiele Klavier und liebe Musik.</span>
+            </div>
+            <div class="contact">
+                <span class="subHeadline" id="contact">KONTAKT</span><br>
+                <span class="line" id="underContact">contact@mariopetkovic.com</span>
+            </div>
         </div>
     </div>
-    
+</div>
+<footer>
     <div class="theme">
         <input type="checkbox" class="checkbox" id="chk" value="white"/>
         <label class="label" for="chk" id="chklabel">
@@ -86,6 +100,9 @@
             <div class="ball" id="ball"></div>
         </label>
     </div>
-    
+</footer>
+
+</div>
+
 </body>
 </html>
